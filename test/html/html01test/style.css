@@ -241,9 +241,11 @@ body {
         .footer-gnb {
           width: 1300px;
           padding: 20px;
-          display: flex;
+          ul {
+            display: flex;
+            gap: 40px;
+          }
           text-transform: uppercase;
-          gap: 40px;
           color: white;
         }
       }
@@ -265,12 +267,14 @@ body {
             flex-direction: column;
             gap: 10px;
             .bottom-footer-content-list {
-              display: flex;
-              gap: 40px;
-              li {
-                font-size: 14px;
+              ul {
                 display: flex;
-                flex-direction: column;
+                gap: 40px;
+                li {
+                  font-size: 14px;
+                  display: flex;
+                  flex-direction: column;
+                }
               }
             }
           }

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <main id="main-container">
+      <header class="header">
+        <div class="header-left-side">
+          <h1 class="logo">
+            <a href="#"><img src="./images/logo-big.jpg" alt="" /></a>
+          </h1>
+          <nav class="left-gnb">
+            <ul>
+              <li>about</li>
+              <li>channel</li>
+              <li>magazines</li>
+              <li>video</li>
+              <li>news</li>
+              <li>store</li>
+            </ul>
+          </nav>
+        </div>
+        <div class="header-right-side">
+          <nav class="right-gnb">
+            <ul>
+              <li>login</li>
+              <li>signup</li>
+            </ul>
+          </nav>
+          <div class="menu-toggle-btn">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+      </header>
+      <section class="content-section">
+        <article class="content-container">
+          <h3 class="title">로그인</h3>
+          <div class="form-container">
+            <form action="/" class="login-form form">
+              <h4 class="form-title">회원 로그인</h4>
+              <p class="form-description">
+                <span>가입하신 아이디와 비밀번호를 입력해주세요.</span
+                ><span>비밀번호는 대소문자를 구분합니다.</span>
+              </p>
+              <div class="form-input-container">
+                <input type="text" name="id" id="id" placeholder="member id" />
+                <input type="text" name="pw" id="pw" placeholder="password" />
+              </div>
+              <div class="form-checkbox-container">
+                <input type="checkbox" name="id-save" id="id-save" />
+                <label for="id-save">아이디 저장</label>
+                <input type="checkbox" name="auto-login" id="auto-login" />
+                <label for="auto-login">자동 로그인</label>
+              </div>
+              <input type="submit" value="LOG-IN" />
+            </form>
+            <form action="/" class="signup-form form">
+              <h4 class="form-title">회원 가입</h4>
+              <div class="signup-form-content-container">
+                <article class="form-description-container">
+                  <p class="form-description">
+                    <span>아직 회원이 아니신가요?</span
+                    ><span
+                      >회원가입을 하시면 다양한 혜택을 편리하게 이용하실 수
+                      있습니다.</span
+                    >
+                  </p>
+                  <input type="button" value="JOIN-US" />
+                </article>
+                <article class="form-description-container">
+                  <p class="form-description">
+                    <span>아이디 혹은 비밀번호를 잊으셨나요?</span
+                    ><span
+                      >간단한 정보를 입력 후 잃어버린 정보를 찾으실 수
+                      있습니다.</span
+                    >
+                  </p>
+                  <input type="button" value="ID/PASSWORD" />
+                </article>
+              </div>
+            </form>
+          </div>
+        </article>
+      </section>
+      <footer class="footer">
+        <div class="footer-container">
+          <div class="top-side">
+            <ul class="footer-gnb">
+              <li>about</li>
+              <li>channel</li>
+              <li>magazines</li>
+              <li>video</li>
+              <li>news</li>
+              <li>store</li>
+            </ul>
+          </div>
+          <div class="bottom-side">
+            <div class="bottom-footer-content">
+              <div class="bottom-left-side">
+                <img src="./images/logo-big.jpg" alt="" />
+              </div>
+              <div class="bottom-right-side">
+                <div class="bottom-footer-title">
+                  <span>contact us</span>
+                </div>
+                <ul class="bottom-footer-content-list">
+                  <li>
+                    <span>의류</span>
+                    <span>02.1588.2906</span>
+                  </li>
+                  <li>
+                    <span>메거진</span>
+                    <span>02.2004.8800</span>
+                  </li>
+                  <li>
+                    <span>트래블러 매거진</span>
+                    <span>02.763.8600</span>
+                  </li>
+                  <li>
+                    <span>발송</span>
+                    <span>02.3490.2742</span>
+                  </li>
+                  <li>
+                    <span>모바일 액세서리</span>
+                    <span>080.643.12345</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <address class="bottom-footer-address">
+            <p>
+              <span
+                >COPYRIGHT &copy; 2025. NATIONAL GEOGRAPHIC KOREA LLT. All
+                Rights Reserved.</span
+              >
+            </p>
+            <p>
+              <span>개인정보 취급방침(업데이트됨)</span>
+              <span>회원가입</span>
+            </p>
+          </address>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

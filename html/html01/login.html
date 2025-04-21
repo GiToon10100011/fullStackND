@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <!-- 없으면 인코딩이 안돼서 글자가 전부 깨짐 -->
+    <meta charset="UTF-8" />
+    <!-- 내 현재 장치  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로그인</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- header태그에는 주로 로고, 메뉴, gnb 등이 들어감 -->
+    <!-- 헤더는 보통 여러곳에서 쓰이지 않기 때문에 아이디를 줄 필요가 크게 없어짐. 페이지 중 큰 부분을 차지하여 id를 사용하는것이 맞긴하나, 한번만 사용돼서 줄 필요가 없는 것.  -->
+    <header>
+      <div class="header-container">
+        <div class="header-container-left">
+          <!-- header에 들어가는 로고는 따로 이름을 구분짓지 않음 메인로고라 그런가? -->
+          <h1 class="logo">
+            <a href="#"
+              ><img src="./images/logo-big.jpg" alt="national-geo-logo"
+            /></a>
+          </h1>
+          <nav>
+            <ul class="header-gnb">
+              <li><a href="#">about</a></li>
+              <li><a href="#">channel</a></li>
+              <li><a href="#">magazines</a></li>
+              <li><a href="#">video</a></li>
+              <li><a href="#">news</a></li>
+              <li><a href="#">store</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="header-container-right">
+          <ul class="header-login">
+            <li><a href="#">login</a></li>
+            <li><a href="#">signup</a></li>
+          </ul>
+          <p class="menu-toggle-btn"><a href="#">ham</a></p>
+        </div>
+      </div>
+    </header>
+    <!-- 본문 내용 -->
+    <main></main>
+    <!-- 하단 로고, 주소줄, 하단메뉴 등이 들어감 -->
+    <footer>
+      <div class="footer-top">
+        <div class="footer-inner-content">
+          <ul class="footer-menu">
+            <li><a href="#">about</a></li>
+            <li><a href="#">channel</a></li>
+            <li><a href="#">magazines</a></li>
+            <li><a href="#">video</a></li>
+            <li><a href="#">news</a></li>
+            <li><a href="#">store</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr />
+      <div class="footer-bottom">
+        <div class="footer-inner-content">
+          <!-- footer는 중요도가 떨어지기 때문에 링크도 안넣고 제목태그도 안쓴다.  -->
+          <p class="footer-logo">
+            <img src="./images/logo-big.jpg" alt="footer-logo" />
+          </p>
+          <div class="footer-contact">
+            <!-- footer는 중요도가 떨어지기 때문에 굳이 제목 태그를 사용할 필요는 없다. 하지만 여기서는 demonstration을 위해 사용-->
+            <div class="contact-container">
+              <h2 class="content-title">contact us</h2>
+              <!-- 무언가를 강조할때는 strong사용  -->
+              <div class="contact-content">
+                <div>
+                  <strong>의류</strong>
+                  <p>02.1588.2906</p>
+                </div>
+                <div>
+                  <strong>매거진</strong>
+                  <p>02.763.8600</p>
+                </div>
+                <div>
+                  <strong>트래블러 매거진</strong>
+                  <p>02.763.8600</p>
+                </div>
+                <div>
+                  <strong>방송</strong>
+                  <p>02.3490.2742</p>
+                </div>
+                <div>
+                  <strong>모바일 액세서리</strong>
+                  <p>080.643.12345</p>
+                </div>
+              </div>
+            </div>
+            <div class="copyright-container">
+              <p class="copyright">copyright &copy;</p>
+              <ul class="footer-gnb">
+                <li><a href="#">개인정보처리방침[업데이트]</a></li>
+                <li><a href="#">이용약관</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

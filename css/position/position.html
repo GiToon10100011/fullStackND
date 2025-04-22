@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body{
+        height: 300vh;
+      }
+      header{
+        z-index: 9999;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100px;
+        border-bottom: 2px solid;
+      }
+      .container {
+        position: relative;
+        width: 600px;
+        border: 1px solid red;
+        margin: 50px auto;
+        div {
+          border: 5px solid;
+          &.box1 {
+            z-index: 1;
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: red;
+          }
+          &.box2 {
+            width: 200px;
+            height: 200px;
+            background: blue;
+            position: absolute;
+          }
+          &.box3 {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            background: green;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>logo</header>
+    <div class="container">
+      <div class="box1">box1</div>
+      <div class="box2">box2</div>
+      <div class="box3">box3</div>
+    </div>
+  </body>
+</html>

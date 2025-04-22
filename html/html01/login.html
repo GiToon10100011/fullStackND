@@ -6,6 +6,7 @@
     <!-- 내 현재 장치  -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>로그인</title>
+    <link rel="stylesheet" href="common.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -36,16 +37,102 @@
             <li><a href="#">login</a></li>
             <li><a href="#">signup</a></li>
           </ul>
-          <p class="menu-toggle-btn"><a href="#">ham</a></p>
+          <p class="menu-toggle-btn">
+            <a href="#"
+              ><svg
+                clip-rule="evenodd"
+                fill-rule="evenodd"
+                stroke-linejoin="round"
+                stroke-miterlimit="2"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="m21 4c0-.478-.379-1-1-1h-16c-.62 0-1 .519-1 1v16c0 .621.52 1 1 1h16c.478 0 1-.379 1-1zm-16.5.5h15v15h-15zm12.5 10.75c0-.414-.336-.75-.75-.75h-8.5c-.414 0-.75.336-.75.75s.336.75.75.75h8.5c.414 0 .75-.336.75-.75zm0-3.248c0-.414-.336-.75-.75-.75h-8.5c-.414 0-.75.336-.75.75s.336.75.75.75h8.5c.414 0 .75-.336.75-.75zm0-3.252c0-.414-.336-.75-.75-.75h-8.5c-.414 0-.75.336-.75.75s.336.75.75.75h8.5c.414 0 .75-.336.75-.75z"
+                  fill-rule="nonzero"
+                /></svg
+            ></a>
+          </p>
         </div>
       </div>
     </header>
     <!-- 본문 내용 -->
-    <main></main>
+    <main>
+      <section class="login-container">
+        <!-- section을 사용할때는 반드시 제목태그를 사용해야하는데, 꼭 section바로 뒤에 올 필요는 없다. div로 묶어서 제목태그를 넣을 수 있으나, 이때 다른 블록태그 (p 등)은 사용해서는 안된다.  -->
+        <div class="login-member">
+          <!-- 제목을 만들어놓고 나중에 css등으로 안보이게 하는 방법도 있다. 중요한것은 리더기로 목차와 같은 제목태그가 읽힐 수 있도록 만드는것이 포인트이다.  -->
+          <h2 class="title">로그인</h2>
+          <div class="login-member-container">
+            <!-- h2를 썼으니까 그 안쪽에는 당연히 더 작은 h3를 사용 -->
+            <div class="login">
+              <h3>회원 로그인</h3>
+              <p>
+                가입하신 아이디와 비밀번호를 입력해주세요<br />비밀번호는
+                대소문자를 구분합니다
+              </p>
+              <!-- action을 생략도 할 수 있다. name도 부여 가능 -->
+              <form name="memberLogin">
+                <p>
+                  <label for="memberId">member id</label
+                  ><input
+                    type="text"
+                    id="memberId"
+                    name="memberId"
+                    placeholder="아이디를 입력하세요"
+                  />
+                </p>
+                <p>
+                  <label for="memberPw">password</label
+                  ><input
+                    type="text"
+                    id="memberPw"
+                    name="memberPw"
+                    placeholder="비밀번호를 입력하세요"
+                  />
+                </p>
+                <div class="login-check">
+                  <!-- label의 자식요소로 input을 주게 되면 for로 굳이 연결할 필요가 없어진다. -->
+                  <label
+                    ><input type="checkbox" name="saveId" /> 아이디 저장</label
+                  ><label
+                    ><input type="checkbox" name="autoLogin" /> 자동
+                    로그인</label
+                  >
+                </div>
+                <input type="submit" class="loginBtn" value="log-in" />
+              </form>
+            </div>
+            <div class="member">
+              <h3>회원가입</h3>
+              <div>
+                <p>
+                  아직 회원이 아니신가요?<br />회원가입을 하시면 다양한 혜택을
+                  편리하게 이용하실 수 있습니다.
+                </p>
+                <button class="member-btn">join-us</button>
+              </div>
+              <div>
+                <p>
+                  아이디 혹은 비밀번호를 잊으셨나요?<br />간단한 정보를 입력 후
+                  잃어버린 정보를 찾으실 수 있습니다.
+                </p>
+                <button class="member-btn">id/password</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
     <!-- 하단 로고, 주소줄, 하단메뉴 등이 들어감 -->
     <footer>
       <div class="footer-top">
         <div class="footer-inner-content">
+          <p class="top-btn">
+            <a href="#"
+              ><img src="./images/btn-top.png" alt="상단으로 가는 버튼"
+            /></a>
+          </p>
           <ul class="footer-menu">
             <li><a href="#">about</a></li>
             <li><a href="#">channel</a></li>

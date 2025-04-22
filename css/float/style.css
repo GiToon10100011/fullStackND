@@ -1,0 +1,43 @@
+.container {
+  background: #ddd;
+  width: 1000px;
+  margin: 50px auto;
+  div {
+    width: 200px;
+    height: 50px;
+    border: 1px solid red;
+  }
+  &.float-container {
+    /* 1. 높이를 준다 . */
+    /* 보더 때문에 +1 */
+    /* 자식 요소 높이가 변경되면 계속 부모도 높이를 재계산해야하는게 매우 불편 */
+    /* height: 51px; */
+
+    /* 2. 부모도 float를 준다. */
+    /* 밑에 요소들이 쳐들어오게 됨. */
+    /* float: left; */
+
+    /* 3. overflow: hidden*/
+    /* 넘쳐나는 요소를 보지 못해 메뉴바같은걸 못 사용함.  */
+    /* overflow: hidden; */
+
+    /* 4. 베스트 방법, ::after */
+    &::after{
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    /* 자식요소들에게 float를 부여  */
+    div {
+      float: left;
+      /* 여백까지 다 계산된 값이 부모 너비보다 커지면 알아서 wrap이 된다.  */
+      margin-right: 50px;
+    }
+  }
+  &.flex-container{
+    display: flex;
+    gap: 50px;
+    justify-content: space-evenly;
+  }
+}

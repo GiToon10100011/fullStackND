@@ -1,0 +1,39 @@
+/* 변수 */
+:root{
+  --main-text-color: #222;
+}
+
+/* 공통 스타일 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img,
+video {
+  /* 이미지 비디오는 글자와 라인이 달라서 vertical align이 필요함 */
+  vertical-align: top;
+}
+
+.blind{
+  position: absolute;
+  top: -999999999px;
+}
+
+body{
+  font-family: "", sans-serif;
+  /* 너무 검은색은 좀 피하려고 #222로 지정함 */
+  color: var(--main-text-color);
+}

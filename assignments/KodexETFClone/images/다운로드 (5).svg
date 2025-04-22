@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="opacity:0; position:fixed; left:-99999px; top:-99999px;width:10px;height:10px;">
+  <defs>
+    <linearGradient id="color-stroke-up" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="100%" stop-color="#F75D5F" stop-opacity="1"></stop>
+    </linearGradient>
+    <linearGradient id="color-uv-up" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FE6C6C" stop-opacity="1"></stop>
+      <stop offset="100%" stop-color="rgba(254, 70, 75, 0)" stop-opacity="0"></stop>
+    </linearGradient>
+
+    <linearGradient id="color-stroke-down" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="100%" stop-color="#3183FE" stop-opacity="1"></stop>
+    </linearGradient>
+    <linearGradient id="color-uv-down" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(21, 115, 254, 0.6)" stop-opacity="1"></stop>
+      <stop offset="100%" stop-color="rgba(21, 115, 254, 0)" stop-opacity="0"></stop>
+    </linearGradient>
+  </defs>
+</svg>

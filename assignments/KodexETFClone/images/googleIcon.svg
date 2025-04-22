@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="google" width="24" height="24" viewBox="0 0 24 24">
+  <path id="Vector" d="M7.837,1.636A7.725,7.725,0,0,1,5.4,7.516H2.765V5.509A3.678,3.678,0,0,0,4.394,3.094H0V0H7.688a9.042,9.042,0,0,1,.148,1.636Z" transform="translate(12.163 10.545)" fill="#3e82f1" fill-rule="evenodd"></path>
+  <path id="Vector-2" data-name="Vector" d="M0,2.073V0H2.726A4.855,4.855,0,0,0,7.294,3.3a4.98,4.98,0,0,0,2.765-.763L12.7,4.541A7.887,7.887,0,0,1,7.3,6.48,8.179,8.179,0,0,1,0,2.073Z" transform="translate(4.868 13.52)" fill="#32a753" fill-rule="evenodd"></path>
+  <path id="Vector-3" data-name="Vector" d="M.868,7.185A7.867,7.867,0,0,1,.868,0H3.6V2.073a4.64,4.64,0,0,0,0,3.04Z" transform="translate(4 8.407)" fill="#f9bb00" fill-rule="evenodd"></path>
+  <path id="Vector-4" data-name="Vector" d="M7.3,3.182a4.855,4.855,0,0,0-4.568,3.3L0,4.407A8.179,8.179,0,0,1,7.3,0a7.938,7.938,0,0,1,5.463,2.083L10.416,4.378A4.463,4.463,0,0,0,7.3,3.182Z" transform="translate(4.868 4)" fill="#e74133" fill-rule="evenodd"></path>
+</svg>

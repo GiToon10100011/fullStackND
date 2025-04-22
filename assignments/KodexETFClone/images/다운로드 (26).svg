@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="fill_no" data-name="fill=no" width="24" height="24" viewBox="0 0 24 24" class="radio replaced-svg">
+  <g id="Vector" transform="translate(4 4)" fill="none" stroke="#888" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+    <circle cx="8" cy="8" r="8" stroke="none"></circle>
+    <circle cx="8" cy="8" r="7.25" fill="none"></circle>
+  </g>
+  <path id="Vector-2" data-name="Vector" d="M6.667,0,2.222,4,0,2" transform="translate(8.667 10)" fill="none" stroke="#888" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>

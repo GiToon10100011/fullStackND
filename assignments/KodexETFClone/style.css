@@ -1,0 +1,295 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat:wght@300;400;500;600;700;900&display=swap");
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+
+:root {
+  --accent-color: #1454ff;
+  --background-color: #f1f3f8;
+  --text-color-white: #fff;
+  --text-color-black: #000;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html,
+body {
+  background: var(--background-color);
+  font-family: "Red Hat", "Pretendard", sans-serif;
+  font-weight: 500;
+  line-height: 1;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: max(10.8rem, 15vh);
+  margin-bottom: calc(max(10.8rem, 15vh) * -1);
+  .inner-header-container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5vw;
+    position: relative;
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: max(1.6rem, 1.4583vw);
+      .logo {
+        width: calc(max(1rem, 0.8334vw) * (210 / 16));
+        aspect-ratio: 210/27;
+        min-width: 9.6rem;
+        min-height: 1.73rem;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+      .mode-switcher-container {
+        width: fit-content;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: calc(max(1rem, 0.8334vw) * (100 / 16));
+        background-color: #dfe3eb;
+        font-size: calc(max(1rem, 0.8334vw) * (18 / 16));
+        .mode {
+          padding: calc(max(1rem, 0.8334vw) * (12.5 / 16))
+            calc(max(1rem, 0.8334vw) * (20 / 16))
+            calc(max(1rem, 0.8334vw) * (11.5 / 16));
+          border-radius: 3em;
+          cursor: pointer;
+          &.kodexEtf {
+            background: var(--accent-color);
+            color: var(--text-color-white);
+          }
+          &.samsung-fund {
+            background: #dfe3eb;
+            color: #616161;
+          }
+        }
+      }
+    }
+    .header-middle {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      .header-gnb-container {
+        ul {
+          display: flex;
+          li {
+            a {
+              padding: calc(14 / 16 * 1em) calc(20 / 16 * 1em);
+              text-transform: uppercase;
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+    .header-right {
+      display: flex;
+      align-items: center;
+      /* gap: calc(max(1rem, 0.8334vw) * (24 / 16)); */
+      .etf-dividend-status {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: calc(40 / 15 * 1em);
+        font-size: 14px;
+        background: #000084;
+        color: var(--text-color-white);
+        text-transform: uppercase;
+        padding: 0 calc(20 / 15 * 1em);
+        margin-right: calc(max(1rem, 0.8334vw) * (24 / 16));
+        border-radius: calc(12 / 15 * 1em);
+      }
+      .header-menu-dropdown {
+        width: fit-content;
+        padding: calc(4 / 15 * 1em) 0 calc(4 / 15 * 1em) 0;
+        position: relative;
+        select {
+          width: 60px;
+          border: 1px solid rgba(97, 102, 118, 0.2);
+          padding: calc(3 / 15 * 1em) calc(30 / 15 * 1em) calc(5 / 15 * 1em)
+            calc(14 / 15 * 1em);
+          height: calc(36 / 15 * 1em);
+          border-radius: 30px;
+          text-transform: uppercase;
+          background: transparent;
+          outline: none;
+          appearance: none;
+          transition: border 0.3s;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+          background-repeat: no-repeat;
+          background-position: right 8px center;
+          background-size: 1em;
+          cursor: pointer;
+          &:hover {
+            border: 1px solid rgba(97, 102, 118, 0.8);
+          }
+        }
+      }
+      .header-icon {
+        width: 46px;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 0.8rem;
+        transition: background-color 0.3s;
+        img {
+          width: 50%;
+          object-fit: contain;
+        }
+        &:hover {
+          background-color: rgba(215, 221, 229, 0.7);
+        }
+        &.hamburger-button {
+          margin-left: 0;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+      button {
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
+        outline: none;
+      }
+    }
+  } /* 로그인 페이지 스타일 */
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - max(5rem, 10vh));
+  padding: 2rem;
+
+  .login-box {
+    background-color: white;
+    border-radius: calc(max(1rem, 0.8334vw) * (60 / 16));
+    padding: calc(max(1rem, 0.8334vw) * (64 / 16))
+      calc(max(1rem, 0.8334vw) * (64 / 16))
+      calc(max(1rem, 0.8334vw) * (64 / 16));
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+    .login-title {
+      font-size: max(2.7rem, 2.0833vw);
+      font-weight: 600;
+      padding-bottom: calc(18 / 40 * 1em);
+      color: var(--text-color-black);
+    }
+
+    .login-description {
+      font-size: 19px;
+      font-weight: 400;
+      color: #666;
+      margin-bottom: 4rem;
+      line-height: 1.6;
+      word-break: keep-all;
+    }
+
+    .login-options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+      position: relative;
+
+      .login-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.9rem;
+        border-radius: calc(16 / 18 * 1em);
+        font-size: 1rem;
+        font-weight: 500;
+        width: 100%;
+        transition: all 0.2s ease;
+        position: relative;
+        border: none;
+        cursor: pointer;
+
+        img {
+          position: absolute;
+          left: 1.2rem;
+          width: 24px;
+          height: 24px;
+        }
+
+        &.kakao {
+          background-color: #fee500;
+          color: #3c1e1e;
+        }
+
+        &.naver {
+          background-color: #03c75a;
+          color: var(--text-color-white);
+        }
+
+        &.google {
+          background-color: white;
+          color: #333;
+          border: 1px solid #ddd;
+        }
+
+        &:hover {
+          opacity: 0.9;
+        }
+      }
+
+      .quick-signup-button {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        background-color: #3b4890;
+        color: white;
+        padding: 0.4rem 0.4rem;
+        padding-right: 0.8rem;
+        margin-bottom: .4rem;
+        border-radius: 8px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        width: fit-content;
+        position: relative;
+      }
+
+      .quick-signup-button::before {
+        content: "⚡";
+        font-size: 1rem;
+      }
+
+      .quick-signup-button::after {
+        content: "";
+        position: absolute;
+        bottom: -6px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 6px solid #444c83;
+      }
+    }
+  }
+}

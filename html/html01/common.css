@@ -27,6 +27,10 @@ video {
   vertical-align: top;
 }
 
+input:focus{
+  outline: none;
+}
+
 .blind{
   position: absolute;
   top: -999999999px;
@@ -37,3 +41,4 @@ body{
   /* 너무 검은색은 좀 피하려고 #222로 지정함 */
   color: var(--main-text-color);
 }
+

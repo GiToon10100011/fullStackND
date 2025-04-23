@@ -22,7 +22,7 @@ header {
       }
       &.header-container-right {
         .menu-toggle-btn {
-          a{
+          a {
             display: block;
             width: 80px;
             height: 80px;
@@ -30,7 +30,7 @@ header {
             justify-content: center;
             align-items: center;
             background: rgb(255, 230, 0);
-            svg{
+            svg {
               width: 40px;
             }
           }
@@ -50,9 +50,92 @@ header {
 /* main */
 
 main {
+  .login-container {
+    display: flex;
+    align-items: center;
+    height: calc(100vh - 80px);
+    .login-member {
+      margin: 0 auto;
+      width: 910px;
+      font-size: 0.88rem;
+    }
+    .login-member-container {
+      display: flex;
+      & > div {
+        flex: 1;
+        padding: 50px;
+        p {
+          margin: 20px 0 10px;
+        }
+        button,
+        input[type="submit"] {
+          width: 100%;
+          height: 50px;
+          border: none;
+          font-size: 1.3rem;
+          text-transform: uppercase;
+          background: #000;
+          color: white;
+        }
+      }
+      .login {
+        background: #d6d6d6;
+        form {
+          p {
+            position: relative;
+            input {
+              width: 100%;
+              line-height: 40px;
+            }
+            label {
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              left: 10px;
+              text-transform: uppercase;
+              color: #000;
+            }
+          }
+          .login-check {
+          }
+        }
+      }
+      .member {
+        background: #ffd800;
+      }
+    }
+  }
 }
 
 /* footer */
 
 footer {
+  color: #888;
+  background: #151515;
+  .footer-top {
+    .footer-inner-content {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      .top-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translateY(-50%);
+      }
+    }
+    .footer-menu {
+      padding: 20px;
+      display: flex;
+      gap: 60px;
+      text-transform: uppercase;
+      li {
+        a {
+        }
+      }
+    }
+  }
+  hr {
+    border: 1px solid #888;
+  }
 }

@@ -1,0 +1,127 @@
+/* .pcTitle {
+}
+
+.iPadTitle,
+.mobileTitle {
+  display: none;
+}
+
+.main {
+  max-width: 1600px;
+  border: 1px solid;
+  margin: 0 auto;
+  display: flex;
+  div {
+    border: 1px solid red;
+    flex: 1;
+    &:nth-child(2) {
+      flex: 2;
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .pcTitle {
+    display: none;
+  }
+
+  .iPadTitle {
+    display: block;
+  }
+
+  .main {
+    flex-wrap: wrap;
+    div {
+      border: 1px solid blue;
+      width: 47%;
+      &:nth-child(2) {
+        order: -1;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .iPadTitle {
+    display: none;
+  }
+  .mobileTitle {
+    display: block;
+  }
+
+  .main {
+    div {
+      width: 100%;
+      border: 1px solid green;
+      &.box2{
+        order: 0;
+      }
+    }
+  }
+} */
+
+pcTitle {
+}
+.iPadTitle,
+.mobileTitle {
+  display: none;
+}
+.main {
+  max-width: 1600px;
+  border: 1px solid black;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  > div {
+    height: 200px;
+  }
+  .box1,
+  .box3 {
+    width: 25%;
+    background: orange;
+  }
+  .box2 {
+    width: 40%;
+    background: green;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .pcTitle {
+    display: none;
+  }
+  .iPadTitle {
+    display: block;
+  }
+  .main {
+    /* 넘쳐나는 자식들 줄 변경*/
+    flex-wrap: wrap;
+    .box1,
+    .box3 {
+      order: 1;
+      width: 47%;
+    }
+    .box2 {
+      width: 100%;
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .mobileTitle {
+    display: block;
+  }
+  .iPadTitle {
+    display: none;
+  }
+  .main {
+    .box1,
+    .box2,
+    .box3 {
+      width: 100%;
+    }
+    .box1,
+    .box3 {
+      order: 0;
+    }
+  }
+}

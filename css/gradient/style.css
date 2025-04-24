@@ -1,0 +1,41 @@
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  vertical-align: top;
+}
+
+.promotion-list {
+  .img-box {
+    width: 400px;
+    position: relative;
+    a {
+      img {
+        width: 100%;
+      }
+    }
+    &:hover{
+      &::after{
+        height: 100%;
+      } 
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 0%;
+      display: block;
+      width: 100%;
+      /* height: 100%; */
+      background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.2),
+        rgba(0, 0, 0, 0.8)
+      );
+      transition: all 0.3s;
+    }
+  }
+}

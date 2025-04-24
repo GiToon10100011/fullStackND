@@ -1,0 +1,20 @@
+.container{
+  background: antiquewhite;
+  /* display: flex; */
+  display: grid;
+  /* 칸의 개수 grid-template-columns: 컨1 칸2 칸3; */
+  /* 가로로 5개 */
+  /* grid-template-columns: repeat(5, 200px);
+  grid-template-columns: repeat(5, 1fr); */
+  /* grid-template-columns: repeat(5, auto); */
+  
+  /* 각 간격의 비율도 설정 가능  */
+  grid-template-columns: 1fr 2fr 1fr;
+
+  /* 줄의 높이 비율설정은 grid-template-rows */
+  gap: 10px;
+  div{
+    background: green;
+    border: 1px solid;
+  }
+}

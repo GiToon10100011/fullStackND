@@ -4,27 +4,304 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <section id="ibk-goods-container">
-      <div class="inner-container">
-        <h2 class="blind">상품 이벤트</h2>
-        <div class="goods-list-container">
-          <div class="goods-list-item cmi">
-            <a href="#void"
-              ><strong>다이렉트연금</strong><span>가입하기</span
-              ><i class="goods-icon"></i
-            ></a>
+    <div class="skip-menu">
+      <p><a href="#gnb">주메뉴 바로가기</a></p>
+      <p><a href="#container">본문 바로가기</a></p>
+    </div>
+    <!-- logo, nav, gnb ... -->
+    <header>
+      <div class="content-inner">
+        <h1 class="logo">
+          <a href="#"><img src="./images/logo.svg" alt="ibk연금보험 로고" /></a>
+        </h1>
+        <nav id="gnb">
+          <ul>
+            <li><a href="#">다이렉트연금</a></li>
+            <li>
+              <a href="#">연금보험상품</a>
+              <ul class="sub-menu">
+                <li><a href="#">연금보험상품 전체보기</a></li>
+                <li><a href="#">다이렉트연금 가입하기</a></li>
+                <li><a href="#">방카슈랑스</a></li>
+                <li><a href="#">ga</a></li>
+                <li><a href="#">tm</a></li>
+              </ul>
+            </li>
+            <li><a href="#">퇴직연금</a></li>
+            <li><a href="#">사이버창구</a></li>
+            <li><a href="#">회사소개</a></li>
+            <li><a href="#">고객지원</a></li>
+          </ul>
+        </nav>
+        <ul class="gnb-list">
+          <li><a href="#">인증서 등록</a></li>
+          <li><a href="#">sitemap-btn</a></li>
+        </ul>
+      </div>
+    </header>
+    <!-- slider, 상품, 고객센터 ... -->
+    <main id="container">
+      <section class="cm-container">
+        <div class="content-inner">
+          <h2 class="blind">상품, 창구</h2>
+          <div class="cm-top-container">
+            <div class="cm-top-left">
+              <div class="cm-slider-container">
+                <ul class="cm-slider-list-text">
+                  <li>
+                    <a href="#">
+                      <span class="cm-slider-subtext"
+                        >절세를 위한 최고의 전략1</span
+                      >
+                      <p>
+                        <strong>퇴직금관리와 세액공제</strong
+                        ><span>두 마리 토끼</span>
+                      </p>
+                      <span class="more-btn">IRP가입하기</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span class="cm-slider-subtext"
+                        >절세를 위한 최고의 전략2</span
+                      >
+                      <p>
+                        <strong>퇴직금관리와 세액공제</strong
+                        ><span>두 마리 토끼</span>
+                      </p>
+                      <span class="more-btn">IRP가입하기</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span class="cm-slider-subtext"
+                        >절세를 위한 최고의 전략3</span
+                      >
+                      <p>
+                        <strong>퇴직금관리와 세액공제</strong
+                        ><span>두 마리 토끼</span>
+                      </p>
+                      <span class="more-btn">IRP가입하기</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span class="cm-slider-subtext"
+                        >절세를 위한 최고의 전략4</span
+                      >
+                      <p>
+                        <strong>퇴직금관리와 세액공제</strong
+                        ><span>두 마리 토끼</span>
+                      </p>
+                      <span class="more-btn">IRP가입하기</span>
+                    </a>
+                  </li>
+                </ul>
+                <ul class="cm-slider-list-img">
+                  <li>
+                    <img
+                      src="./images/411.png"
+                      alt="퇴직금 관리 돼지저금통 이미지"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      src="./images/33.png"
+                      alt="다이렉트연금 핸드폰 이미지"
+                    />
+                  </li>
+                  <li><img src="" alt="" /></li>
+                  <li><img src="" alt="" /></li>
+                </ul>
+                <div class="cm-slider-controls">
+                  <div class="counter-container">
+                    <span class="current">1</span> /
+                    <span class="total">3</span>
+                  </div>
+                  <div class="bar-container">
+                    <span class="progress-bar"></span>
+                  </div>
+                  <ul class="btns-container">
+                    <li><button class="prev-btn icon">previous btn</button></li>
+                    <li>
+                      <button class="playStop-btn icon">
+                        play-stop toggle
+                      </button>
+                    </li>
+                    <li><button class="next-btn icon">next btn</button></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="cm-top-right">
+              <!-- <div id="ibk-goods-container">
+                <div class="inner-container">
+                  <h2 class="blind">상품 이벤트</h2>
+                  <div class="goods-list-container">
+                    <div class="goods-list-item cmi">
+                      <a href="#void"
+                        ><strong>다이렉트연금</strong><span>가입하기</span
+                        ><i class="goods-icon"></i
+                      ></a>
+                    </div>
+                    <div class="goods-list-item irp">
+                      <a href="#void"
+                        ><strong>irp</strong><span>가입하기</span
+                        ><i class="goods-icon"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+              <ul>
+                <li>
+                  <a href="#void">
+                    <strong>다이렉트연금1</strong><span>가입하기</span>
+                    <div class="icon"><i class="ani-icon"></i></div>
+                  </a>
+                  <div class="cm-explanation"><i></i></div>
+                </li>
+                <li>
+                  <a href="#void">
+                    <strong>다이렉트연금2</strong><span>알아보기</span>
+                    <div class="icon"><i class="ani-icon"></i></div>
+                  </a>
+                  <div class="cm-explanation"><i></i></div>
+                </li>
+                <li>
+                  <a href="#void">
+                    <strong>다이렉트연금3</strong><span>창구</span>
+                    <div class="icon"><i class="ani-icon"></i></div>
+                  </a>
+                  <div class="cm-explanation"><i></i></div>
+                </li>
+                <li>
+                  <a href="#void">
+                    <strong>다이렉트연금4</strong><span>창구</span>
+                    <div class="icon"><i class="ani-icon"></i></div>
+                  </a>
+                  <div class="cm-explanation"><i></i></div>
+                </li>
+                <li>
+                  <a href="#void">
+                    <strong>다이렉트연금5</strong><span>창구</span>
+                    <div class="icon"><i class="ani-icon"></i></div>
+                  </a>
+                  <div class="cm-explanation"><i></i></div>
+                </li>
+                <li>
+                  <a href="#void">
+                    <strong>다이렉트연금6</strong><span></span>
+                    <div class="icon"><i class="ani-icon"></i></div>
+                  </a>
+                  <div class="cm-explanation"><i></i></div>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="goods-list-item irp">
-            <a href="#void"
-              ><strong>irp</strong><span>가입하기</span
-              ><i class="goods-icon"></i
-            ></a>
+          <div class="cm-bottom-container">
+            <ul class="cm-info-list">
+              <li>
+                <a href="#">
+                  <strong>title1</strong>
+                  <p>국채은행 ibk 기업은행</p>
+                  <p class="info-icon"><img src="" alt="" /></p>
+                  <div class="cm-more-btn"><i></i></div>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <strong>title1</strong>
+                  <p>국채은행 ibk 기업은행</p>
+                  <p class="info-icon"><img src="" alt="" /></p>
+                  <div class="cm-more-btn"><i></i></div>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <strong>title1</strong>
+                  <p>국채은행 ibk 기업은행</p>
+                  <div class="cm-more-btn"><i></i></div>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <strong>title1</strong>
+                  <p>국채은행 ibk 기업은행</p>
+                  <div class="cm-more-btn"><i></i></div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="news-container">
+        <div class="content-inner"><h2>IBK연금 소식</h2></div>
+      </section>
+      <section class="customer-container">
+        <div class="content-inner">
+          <h2 class="blind">가입상담, 고객의 소리, 민원신청</h2>
+        </div>
+      </section>
+    </main>
+    <!-- 하단로고, footer menu, sns, address ... -->
+    <footer>
+      <div class="footer-top">
+        <div class="content-inner">
+          <ul class="footer-check">
+            <li><a href="#">개인신용정보이용&middot;제공 조회</a></li>
+            <li><a href="#">마케팅동의 및 철회 조회</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-middle">
+        <div class="content-inner">
+          <ul class="footer-menu">
+            <li><a href="#">개인정보 처리방침</a></li>
+            <li><a href="#">신용정보 활용체제</a></li>
+            <li><a href="#">보호금융상품등록부</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="content-inner">
+          <div>
+            <address>
+              <p>
+                주소 : 04511 서울시 중구 칠패로 37, (봉래동 1가, HSBC 빌딩)
+                IBK연금보험
+              </p>
+              <p>
+                <span>대표이사 : 임문택</span
+                ><span
+                  >대표전화 : <a href="tel:02-2270-1600">02-2270-1600</a></span
+                ><span
+                  >사업자번호 :
+                  <a href="tel:104-86-29322">104-86-29322</a></span
+                >/p>
+              </p>
+              <p class="copy">© IBK INSURANCE</p>
+            </address>
+            <div class="smart-container">
+              <div class="smart-qr">
+                <img src="./images/pic_qr.png" alt="qr code" />
+              </div>
+              <div class="smart">
+                <a href="#void"><i class="icon"></i>IBK연금보험 스마트창구</a>
+                <p>
+                  IBK연금보험 스마트창구를 통해 쉽고 빠르게 다양한 보험서비스를
+                  만나보세요.
+                </p>
+                <small>※ 스마트폰의 카메라로 왼쪽 QR코드를 촬영해주세요!</small>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </footer>
   </body>
 </html>

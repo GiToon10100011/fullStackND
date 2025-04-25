@@ -1,0 +1,115 @@
+/* variables */
+
+:root {
+  --ibk-main-color: #0055a2;
+  --ibk-bg-color: #f0f2f6;
+  --ibk-text-color: #0d020f;
+  --ibk-sub-color: #72808e;
+  --border-radius: 4rem;
+}
+
+/* body */
+
+body {
+  line-height: 3rem;
+  color: var(--ibk-text-color);
+}
+
+.content-inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* header */
+
+header {
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.04);
+  .content-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+
+    #gnb {
+      & > ul {
+        display: flex;
+        gap: 40px;
+        & > li {
+          position: relative;
+          a {
+            display: block;
+            font-size: 1.13rem;
+            font-weight: 600;
+          }
+          &:first-child {
+            a {
+              color: var(--ibk-main-color);
+              font-weight: 700;
+            }
+          }
+          .sub-menu {
+            display: none;
+            position: absolute;
+            background: white;
+            padding: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            min-width: 16rem;
+          }
+        }
+      }
+    }
+
+    .gnb-list {
+      display: flex;
+      gap: 10px;
+      li {
+        a {
+          display: block;
+          border-radius: var(--border-radius);
+          position: relative;
+        }
+        &:first-child a {
+          background: var(--ibk-bg-color);
+          padding: 0 20px 0 45px;
+          color: var(--ibk-main-color);
+          font-weight: 700;
+          &::before {
+            content: "";
+            display: block;
+            width: 16px;
+            aspect-ratio: 1/1;
+            background: url("../images/icon_line_b.svg") 100% -8rem/1100% no-repeat;
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            line-height: 40px;
+          }
+        }
+        &:last-child a {
+          text-indent: -9999px;
+          width: 48px;
+          aspect-ratio: 1/1;
+          line-height: 40px;
+          background: var(--ibk-main-color);
+          &::after {
+            content: "";
+            background: url(../images/icon_line_w.svg) 40% -240px/1100% no-repeat;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* main */
+
+/* footer */

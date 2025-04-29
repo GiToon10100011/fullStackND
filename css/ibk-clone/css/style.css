@@ -111,5 +111,126 @@ header {
 }
 
 /* main */
+#container {
+  .cm-container {
+    .cm-top-container {
+      display: flex;
+      justify-content: space-between;
+      .cm-top-left {
+        width: calc(100% / 2);
+        .cm-slider-container {
+          position: relative;
+          background: skyblue;
+          border-radius: 50px 50px 50px 100px;
+          min-height: 500px;
+          .cm-slider-list-text {
+            li {
+              position: absolute;
+              padding: 30px;
+              height: inherit;
+              a {
+                & > span {
+                  padding: 5px 20px;
+                  border-radius: 30px;
+                  color: white;
+                }
+                strong {
+                  font-size: 30px;
+                }
+                .more-btn {
+                  font-size: 20px;
+                  background: white;
+                  color: #0055a2;
+                  padding: 10px 30px;
+                  position: absolute;
+                  bottom: 100px;
+                }
+              }
+            }
+          }
+          .cm-slider-list-img {
+            position: absolute;
+            width: 50%;
+            top: 0;
+            right: 0;
+            li {
+              img {
+                width: 100%;
+              }
+            }
+          }
+          .cm-slider-controls {
+            position: absolute;
+            background: white;
+            border-radius: 0 35px 0 0;
+            left: 0;
+            bottom: 0;
+            display: flex;
+            width: 60%;
+            height: 70px;
+            justify-content: space-between;
+            align-items: center;
+            &::before {
+              content: "";
+              display: block;
+              position: absolute;
+              width: 100px;
+              height: 72px;
+              background: url(../images/deco_banner.svg) center/contain
+                no-repeat;
+              top: 0;
+              right: 0;
+              transform: translateX(50%);
+            }
+            .bar-container {
+              width: 120px;
+              background: var(--ibk-sub-color);
+              height: 4px;
+              border-radius: 20px;
+              overflow: hidden;
+              .progress-bar {
+                display: block;
+                width: 10px;
+                height: inherit;
+                background: #0d020f;
+              }
+            }
+            ul {
+              display: flex;
+            }
+          }
+        }
+      }
+      .cm-top-right {
+        width: calc(100% / 3);
+        
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+          li {
+            width: 50%;
+            padding: 4px;
+            a {
+              display: block;
+              background: var(--ibk-bg-color);
+              border-radius: 40px;
+              height: 160px;
+              padding: 24px;
+              strong {
+                display: block;
+                font-size: 20px;
+                font-weight: 700;
+              }
+              span {
+                font-size: 20px;
+                line-height: 30px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 /* footer */

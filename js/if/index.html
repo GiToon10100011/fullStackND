@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // 점수 3과목 입력받기
+      // javascript, react , node
+      let myJava = prompt("당신의 javascript 점수는", "");
+      let myReact = prompt("당신의 react 점수는", "");
+      let myNode = prompt("당신의 node 점수는?", "");
+      let avg = Number(myJava) + Number(myReact) + Number(myNode);
+      console.log(avg);
+
+      if (avg < 60) {
+        document.write("불합격");
+      } else {
+        if (myJava >= 40 && myReact >= 40 && myNode >= 40) {
+          document.write("합격");
+        } else {
+          document.write("과락");
+        }
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -19,6 +19,7 @@ body {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 /* header */
@@ -203,7 +204,7 @@ header {
       }
       .cm-top-right {
         width: calc(100% / 3);
-        
+
         ul {
           display: flex;
           flex-wrap: wrap;
@@ -234,3 +235,97 @@ header {
 }
 
 /* footer */
+
+#footer {
+  .footer-top {
+    border-top: 1px solid var(--ibk-bg-color);
+    padding: 20px 0;
+    .content-inner {
+      .footer-check {
+        display: flex;
+        gap: 20px;
+        li {
+          a {
+            display: block;
+            background: var(--ibk-main-color);
+            color: white;
+            padding: 0 16px;
+            font-size: 14px;
+            font-weight: 700;
+            border-radius: 30px;
+          }
+        }
+      }
+    }
+  }
+  .footer-middle {
+    background: var(--ibk-bg-color);
+    line-height: 70px;
+    .content-inner {
+      .footer-menu {
+        display: flex;
+        gap: 34px;
+        li {
+          position: relative;
+          a {
+          }
+          &::after {
+            content: attr(data-dot);
+            position: absolute;
+            right: calc(-34px / 2);
+          }
+          &:last-child::after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .footer-bottom {
+    .content-inner {
+      & > div {
+        display: flex;
+        justify-content: space-between;
+        address {
+        }
+        .smart-container {
+          display: flex;
+          gap: 30px;
+          .smart-qr {
+            width: 100px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+          }
+          .smart {
+            a {
+              display: flex;
+              align-items: center;
+              font-size: 18px;
+              gap: 4px;
+              margin-bottom: 6px;
+              color: var(--ibk-main-color);
+              font-size: 800;
+              i {
+                display: block;
+                width: 20px;
+                height: 20px;
+                background: url(../images/icon_line_b.svg) 70% -180px/1100% no-repeat;
+              }
+            }
+            small {
+              font-size: 12px;
+              color: var(--ibk-sub-color);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+}
+
+@media screen and (max-width: 768px) {
+}

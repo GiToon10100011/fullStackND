@@ -114,9 +114,12 @@ header {
 /* main */
 #container {
   .cm-container {
+    padding: 70px 0;
     .cm-top-container {
       display: flex;
       justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 70px;
       .cm-top-left {
         width: calc(100% / 2);
         .cm-slider-container {
@@ -227,6 +230,86 @@ header {
                 line-height: 30px;
               }
             }
+          }
+        }
+      }
+    }
+    .cm-bottom-container {
+      .cm-info-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-gap: 30px;
+        li {
+          a {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: var(--ibk-bg-color);
+            padding: 34px;
+            border-radius: 40px;
+            strong {
+              font-size: 24px;
+              color: var(--ibk-main-color);
+            }
+            .cm-more-btn {
+              width: 60px;
+              aspect-ratio: 1/1;
+              background: var(--ibk-main-color);
+              position: absolute;
+              bottom: 0;
+              right: 0;
+              border-radius: 40px 0 0 0;
+              i {
+                /* background: url(../images/); */
+                display: block;
+                width: 60px;
+                background: black;
+                aspect-ratio: 1/1;
+                border-radius: 50%;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                z-index: 10;
+                &::after {
+                  content: "";
+                  display: block;
+                  width: 28px;
+                  aspect-ratio: 1/1;
+                  position: absolute;
+                  background: url(../images/icon_line_w.svg) 0 -308px/1100% no-repeat; 
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%) rotate(45deg);
+                }
+              }
+              &::before,
+              &::after {
+                content: "";
+                display: block;
+                width: 80px;
+                aspect-ratio: 1/1;
+                border-radius: 50%;
+                background: aqua;
+                position: absolute;
+              }
+              &::after {
+                bottom: 75px;
+                box-shadow: 40px 40px 0 0 red;
+              }
+              &::before {
+                bottom: 0;
+                left: -80px;
+                box-shadow: 40px 40px 0 0 blue;
+              }
+            }
+          }
+          &:first-child {
+            grid-row: span 2;
+          }
+          &:nth-child(2) {
+            grid-row: span 2;
           }
         }
       }

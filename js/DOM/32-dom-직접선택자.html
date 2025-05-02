@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        //h1을 선택하여 글자색 변경하기
+        // let hTitle = document.getElementsByTagName("h1");
+        let hTitle = document.querySelector("h1");
+        //css 글자색 파랑
+        hTitle.style.color = "blue";
+
+        //p를 선택하여 글자 크기
+        let pText = document.querySelector("p");
+        pText.style.fontSize = "30px";
+
+        //p를 전부 선택하여 밑줄
+        let pTag = document.querySelectorAll("p");
+        console.log(pText);
+        pTag.forEach((pItem) => {
+          pItem.style["text-decoration"] = "underline";
+        });
+
+        //클래스 선택 배경색
+        // let cText = docu.getElementByClassName("cText")[0];
+        let cText = document.querySelector(".cText");
+        cText.style.background = "pink";
+
+        //id선택자 배경색 하늘색
+        let idText = document.querySelector("#idText");
+        idText.style.background = "skyblue";
+
+        //폼요소 선택하기
+        document.myForm.uId.style.backgroundColor = "orange";
+      });
+    </script>
+  </head>
+  <body>
+    <h1>dom 선택자- 직접선택자</h1>
+    <p>태그 선택자</p>
+    <p class="cText">클래스 선택자</p>
+    <p id="idText">아이디 선택자</p>
+    <p class="cText">폼 선택자</p>
+    <form name="myForm">
+      <label for="uId">아이디</label>
+      <input type="text" id="uId" name="uId" />
+    </form>
+  </body>
+</html>

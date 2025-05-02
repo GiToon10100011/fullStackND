@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul,
+      ol {
+        list-style: none;
+      }
+      .list {
+        display: flex;
+        gap: 20px;
+      }
+      .list > li {
+        width: 200px;
+        height: 180px;
+        background-color: dodgerblue;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        //list 선택자
+        let list = document.querySelector(".list");
+
+        //list 첫번째 자식을 복사하여 list 마지막에 붙이기
+        let firstItem = list.firstElementChild.cloneNode(true);
+        let lastItem = list.lastElementChild.cloneNode(true);
+        list.appendChild(firstItem);
+        list.prepend(lastItem);
+      });
+    </script>
+  </head>
+  <body>
+    <h1>복사하기</h1>
+    <ul class="list">
+      <li>list1</li>
+      <li>list2</li>
+      <li>list3</li>
+      <li>list4</li>
+      <li>list5</li>
+      <li>list6</li>
+      <li>list7</li>
+    </ul>
+  </body>
+</html>

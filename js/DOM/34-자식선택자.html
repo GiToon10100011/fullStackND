@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // .list li중 첫번째 자식
+        let list = document.querySelector(".list");
+        let first = list.firstElementChild;
+        console.log(first);
+        first.style.color = "blue";
+        //.list li마지막 자식 배경 하늘로
+        let last = list.lastElementChild;
+        console.log(last);
+        last.style.backgroundColor = "skyblue";
+
+        //.menu>li
+        let child = document.querySelectorAll(".menu>li");
+        console.log(child);
+      });
+    </script>
+  </head>
+  <body>
+    <h1>자식선택자</h1>
+    <p>첫번째 자식 - firstChild, firstElementChild</p>
+    <p>마지막 자식 - lastChild, lastElementChild</p>
+    <p>자식들 - children, childNodes</p>
+    <p>개수 - childElementCount</p>
+
+    <ul class="list">
+      <li>list</li>
+      <li>list</li>
+      <li>list</li>
+      <li>list</li>
+      <li>list</li>
+      <li>list</li>
+      <li>list</li>
+    </ul>
+    <ol class="menu">
+      <li>menu1</li>
+      <li>menu2</li>
+      <li>menu3</li>
+      <li>menu4</li>
+      <li>menu5</li>
+    </ol>
+  </body>
+</html>

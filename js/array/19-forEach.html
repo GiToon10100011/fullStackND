@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let charSet = ["ab", "bbb", "ccc", "ab", "abcd", "banana"];
+      //배열에 들어 있는 데이터중에 ab인 요소를 찾아서 "***"
+      charSet.forEach((item, id, arr) => {
+        if (item === "ab") {
+          arr[id] = "***";
+        }
+      });
+      document.write(charSet);
+    </script>
+  </head>
+  <body></body>
+</html>

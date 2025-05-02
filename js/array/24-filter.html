@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let friends = [
+        { name: "염동훈", age: 14, marriage: true },
+        { name: "전우진", age: 32, marriage: false },
+        { name: "도우경", age: 7, marriage: true },
+        { name: "박필립스", age: 43, marriage: false },
+        { name: "해오름", age: 25, marriage: true },
+      ];
+
+      //friends에서 gender가 true 찾아서 map에 넣기
+      const map = friends.filter((friend) => {
+        if (friend.marriage === true) {
+          return friend;
+        }
+      });
+      console.log(map);
+
+      //friends에서 나이가 25보다 크고, index값이 2보다 큰 요소 result
+      const result = friends.filter((friend, index) => {
+        if (friend.age >= 25 && index >= 2) {
+          return friend;
+        }
+      });
+
+      console.log(result);
+    </script>
+  </head>
+  <body></body>
+</html>

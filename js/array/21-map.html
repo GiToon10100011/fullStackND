@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const data = [
+        {
+          id: 0,
+          name: "염동훈",
+          age: 18,
+        },
+        {
+          id: 1,
+          name: "전우진",
+          age: 30,
+        },
+        {
+          id: 2,
+          name: "도우경",
+          age: 8,
+        },
+        {
+          id: 3,
+          name: "제하니",
+          age: 24,
+        },
+        {
+          id: 4,
+          name: "오르니",
+          age: 12,
+        },
+      ];
+      data.map((item, id) => {
+        if (id % 2 == 0) {
+          console.log(item);
+        }
+      });
+
+      const keyObject = [
+        { key: 1, value: 10 },
+        { key: 2, value: 20 },
+        { key: 3, value: 30 },
+      ];
+
+      let reKeyObject = keyObject.map(({ key, value }) => ({ [key]: value }));
+      console.log(reKeyObject);
+    </script>
+  </head>
+  <body></body>
+</html>

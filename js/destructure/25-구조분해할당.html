@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //구조분해 할당
+      const [first, second, third] = colors;
+      console.log(first); //red
+      console.log(second); //green
+      console.log(third); //blue
+
+      let store = ["과일", "음료수", "빵", "라면", "햄"];
+      //첫번째 과일 fruit
+      //나머지 food
+      let [fruit, ...food] = store;
+      console.log(fruit, food);
+
+      //첫번째 fruit 두번째 drink 마지막 ham
+      let [fruit2, drink, , , ham] = store;
+      console.log(fruit2, drink, ham);
+    </script>
+  </head>
+  <body></body>
+</html>

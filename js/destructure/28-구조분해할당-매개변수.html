@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //+ *를 계산하는 함수 만들기
+      function addMul(op, ...num) {
+        if (op == "add") {
+          let sum = 0;
+          for (item of num) {
+            sum += item;
+          }
+          console.log(`더하기 : ${sum}`);
+        } else if (op == "mul") {
+          let sum = 1;
+          for (item of num) {
+            sum *= item;
+          }
+          console.log(`곱하기: ${sum}`);
+        }
+      }
+      addMul("add", 1, 2, 3, 4);
+      addMul("mul", 2, 3, 4);
+    </script>
+  </head>
+  <body></body>
+</html>

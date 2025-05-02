@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //filter 배열의 요소에서 조건에 맞는 요소를 새롭게 반환할때 사용한다
+      let fruits = ["apple", "strawberry", "banana", "grape", "red dragon"];
+      //fruits 배열의 글자의 길이가 6개가 넘어가는것만 추출하여 새로운 배열 만들기
+      let result = fruits.filter((fruit) => fruit.length >= 6);
+      document.write(`${result} <br>`);
+
+      let number = [10, 5, 1, 100, 3, 7];
+      //number에서 숫자가 5보다 큰 요소를 찾아서 result2에 넣기
+      let result2 = number.filter((num) => num >= 5);
+      document.write(`${result2} <br>`);
+
+      //result3 짝수번째의 요소를 찾아서
+      let result3 = fruits.filter((item, id) => {
+        if (id % 2 === 0) {
+          return item;
+        }
+    });
+    document.write(`${result3}<br>`);
+    </script>
+  </head>
+  <body></body>
+</html>

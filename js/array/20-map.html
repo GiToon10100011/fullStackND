@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //map 배열의 데이터를 조작하여 새로운 배열 만들기
+      let number = [1, 2, 3, 4, 5];
+      //number 배열의 데이터를 각각 3배로 만들어서 새로운 배열 만들기
+      let number3 = number.map((item) => item * 3);
+      document.write(number3);
+
+      //let even
+      let even = [0, 2, 4, 6, 8];
+      //짝수가 저장된 even 배열의 데이터를 홀수 만들어서 odd
+      let odd = even.map((item) => item + 1);
+      document.write(odd);
+
+      //number배열의 데이터를 각각 자기의 순서값과 더해서 새로운 배열 만들기
+      let numbId = number.map((item, id) => item + id);
+      document.write(numbId);
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,51 @@
+.main-slide-wrap {
+    position: relative;
+}
+
+.control-wrap {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border: 2px solid #333;
+    border-radius: 50px;
+    background: white;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    width: 400px;
+    height: 70px;
+    z-index: 1000;
+}
+
+.pager-btn {
+    display: flex;
+    width: 40%;
+    position: relative;
+}
+
+.pager-btn>li img {
+    display: block;
+    width: 24px;
+}
+
+.pager-btn .playStop-btn>a {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-image: url(../images/pause.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.pager-btn .playStop-btn.active>a {
+    background-image: url(../images/play.png);
+}
+
+.pager-num {
+    position: relative;
+    width: 60%;
+}
+
+.swiper-pagination2 .swiper-pagination-progressbar-fill {
+    background: red;
+}

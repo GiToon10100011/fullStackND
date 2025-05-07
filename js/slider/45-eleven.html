@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7-eleven</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/swiper.css">
+    <link rel="stylesheet" href="./css/eleven.css">
+
+</head>
+
+<body>
+
+    <main id="7-eleven-main">
+        <section class="main-section main-slide-wrap">
+            <h2 class="blind">main slider</h2>
+            <div class="inner">
+                <div class="swiper main-slide">
+                    <ul class="swiper-wrapper main-slide-list">
+                        <li class="swiper-slide"><img src="./images/banner_01.jpg" alt="배너1"></li>
+                        <li class="swiper-slide"><img src="./images/banner_02.jpg" alt="배너2"></li>
+                        <li class="swiper-slide"><img src="./images/banner_03.jpg" alt="배너3"></li>
+                        <li class="swiper-slide"><img src="./images/banner_04.jpg" alt="배너4"></li>
+                        <li class="swiper-slide"><img src="./images/banner_05.jpg" alt="배너5"></li>
+                    </ul>
+                </div>
+                <div class="control-wrap">
+                    <ul class="pager-btn">
+                        <li class="playStop-btn"><a href="#"></a></li>
+                        <li class="prev-btn"><a href="#"><img src="./images/sliderPrev.png" alt="이전버튼"></a></li>
+                        <li class="next-btn"><a href="#"><img src="./images/sliderNext.png" alt="다음버튼"></a></li>
+                    </ul>
+                    <div class="pager-num">
+                        <div class="swiper-pagination2"></div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+
+        </section>
+    </main>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        let main = new Swiper(".main-slide", {
+            loop: true,
+            autoplay: {
+                delay: 3000,
+            },
+            navigation: {
+                nextEl: ".next-btn",
+                prevEl: ".prev-btn"
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                type: "fraction"
+            }
+        })
+        let pro = new Swiper(".main-slide", {
+            loop:true,
+            pagination: {
+                el: ".swiper-pagination2",
+                type: "progressbar"
+            }
+        })
+
+        main.controller.control = pro;
+
+
+        let playStop = document.querySelector(".playStop-btn");
+        playStop.addEventListener("click", (e) => {
+            console.log("sdfsdf")
+            if (!playStop.classList.contains("active")) {
+                //자동이 취소, 버튼 play그림으로 변경
+                main.autoplay.stop();
+                playStop.classList.add("active");
+                console.log("1111")
+            }
+            else {
+                main.autoplay.start();
+                playStop.classList.remove("active");
+                console.log("2222")
+            }
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent{
+            border:2px solid black;
+            padding:20px;
+            background-color: pink;
+        }
+        .parent>div{
+            border: 2px solid green;
+            background: greenyellow;
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>버블링과 캡처링</h1>
+    <!-- 버블링 일반적 자식에서 부모로 -->
+     <div class="parent parent1">
+        <div class="child1">자식1</div>
+     </div>
+
+     <div class="parent parent2">
+        <div class="child2">자식1</div>
+     </div>
+     <script>
+        //버블링
+        document.querySelector(".parent1").addEventListener("click",(e)=>{
+            console.log("부모1");
+        })
+        document.querySelector(".child1").addEventListener("click",()=>{
+            console.log("자식1");
+        })
+        //캡처링
+        document.querySelector(".parent2").addEventListener("click",(e)=>{
+            console.log("부모2");
+        },true)
+        document.querySelector(".child2").addEventListener("click",()=>{
+            console.log("자식2");
+        })
+     </script>
+</body>
+</html>

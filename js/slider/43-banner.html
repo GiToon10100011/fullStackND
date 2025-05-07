@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <style>
+        .carousel-banner {
+            max-width: 600px;
+            margin: 50px auto;
+            border: 2px solid red;
+        }
+
+        .carousel-banner .carousel-list {
+            display: flex;
+            gap: 10px;
+            overflow-x: scroll;
+        }
+
+        .carousel-banner .carousel-list::-webkit-scrollbar{
+            display: none;
+        }
+        .carousel-banner .carousel-list>li {
+            /* flex:[flex-grow] [flex-shrink] [flex-basis] */
+            /* flex-grow  0 남는 공간을 늘리지 않음
+            flex-shrink 0 모자라는 공간만큼 안줄어줌 
+            flex-basis auto 너비값이 그대로 적용되도록*/
+            flex: 0 0 auto;
+            width: 200px;
+            height: 120px;
+            background: dodgerblue;
+            border-radius: 10px;
+            font-size: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="carousel-banner">
+        <ul class="carousel-list">
+            <li class="item">1</li>
+            <li class="item">2</li>
+            <li class="item">3</li>
+            <li class="item">4</li>
+            <li class="item">5</li>
+        </ul>
+    </div>
+    <script>
+        const carousel = document.querySelector(".carousel-list");
+
+        // 드래그를 시작할 위치를 저장할 변수
+        let startX;
+        //배너의 위치값
+        let scrollLeft;
+        //다운해서 움직이는 상태인지를 체크할 변수
+        let isDragg = false;
+
+        function startDrag(e) {
+            isDragg=true;
+            console.log(e.clientX);
+            startX =e.clientX;
+            console.log(carousel.scrollLeft, carousel.offsetLeft, carousel.clientLeft)
+            scrollLeft = carousel.scrollLeft;
+        }
+        const drag = (e) => {
+            if(!isDragg) retrun;
+            console.log(e.clientX);
+            const x = e.clientX;
+            const walk = x - startX;
+            carousel.scrollLeft = scrollLeft - walk
+        }
+        const endDrag = (e) =>{
+            isDragg=false;
+        }
+
+        //마우스다운
+        carousel.addEventListener("mousedown", startDrag);
+
+        //마우스드래그
+        carousel.addEventListener("mousemove", drag);
+        //마우스업
+        carousel.addEventListener("mouseup", endDrag);
+    </script>
+</body>
+
+</html>

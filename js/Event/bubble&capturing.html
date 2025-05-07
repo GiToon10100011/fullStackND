@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .parent {
+        border: 2px solid;
+        padding: 20px;
+        background: pink;
+        > div {
+          border: 2px solid green;
+          background: greenyellow;
+          padding: 50px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>버블링과 캡처링</h1>
+    <!-- 버블링: 자식에서 부모로 이벤트가 전파됨 -->
+    <div class="parent parent1">
+      <div class="child1"></div>
+    </div>
+    <div class="parent parent2">
+      <div class="child2"></div>
+    </div>
+  </body>
+</html>

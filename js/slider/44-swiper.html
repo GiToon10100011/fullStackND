@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/swiper.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <style>
+        .goods-item {
+            height: 500px;
+        }
+
+        .goods-item {
+            height: 500px;
+            position: relative;
+        }
+
+        .swiper-pagination2 {
+            position: absolute;
+            bottom: 10px;
+            /* 위치 조절 가능 */
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
+
+        .swiper-pagination2 .swiper-pagination-progressbar-fill {
+            background: #007aff;
+            /* 진행바 색상 */
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Swiper -->
+    <div class="swiper goods-item">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+            <div class="swiper-slide">Slide 4</div>
+            <div class="swiper-slide">Slide 5</div>
+            <div class="swiper-slide">Slide 6</div>
+            <div class="swiper-slide">Slide 7</div>
+            <div class="swiper-slide">Slide 8</div>
+            <div class="swiper-slide">Slide 9</div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-pagination2"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".goods-item", {
+            loop: true,
+            slidesPerView: 3,
+            spaceBetween: 30,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                type: "fraction"
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+
+        var processbar = new Swiper(".goods-item", {
+            loop: true,
+            slidesPerView: 3,
+            spaceBetween: 30,
+            pagination: {
+                el: ".swiper-pagination2",
+                type: "progressbar"
+            }
+        })
+        //기본 메인 swiper에 서브 processbar paginatin을 연동
+        swiper.controller.control = processbar
+    </script>
+
+
+</body>
+
+</html>

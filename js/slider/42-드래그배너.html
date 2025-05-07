@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            max-width:600px;
+            height: 200px;
+            background-color: pink;
+            margin-left: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        const boxEl = document.querySelector(".box");
+
+        //pc
+        //mousedown, mouseup, mousemove
+        boxEl.addEventListener("mousedown",(e)=>{
+            console.log(e.pageX);
+
+        })
+
+        //mobile
+        // touchstart, touchend,touchmove
+        boxEl.addEventListener("touchstart",(e)=>{
+            console.log(e);
+        })
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/common.css">
+    <style>
+        header {
+            text-align: center;
+        }
+
+        .fixed {
+            position: fixed;
+            top: 0;
+            background: #ddd;
+        }
+
+        nav {
+            line-height: 50px;
+            width: 100%;
+            background: dodgerblue;
+            transition: 0.3s;
+        }
+
+        #nav {
+            display: flex;
+            justify-content: center;
+            gap: 100px;
+        }
+
+        #nav>li {}
+
+        section {
+            max-width: 1600px;
+            margin: 100px auto;
+        }
+
+        .list {
+            display: flex;
+            justify-content: center;
+            gap: 100px;
+        }
+
+        .list>li {
+            border: 1px solid #ccc;
+        }
+    </style>
+
+
+    <script>
+        window.onload = function () {
+            function navFixed() {
+                let sPos = document.documentElement.scrollTop;
+                console.log(sPos);
+                if (sPos > 48) {
+                    document.querySelector("nav").classList.add("fixed");
+                }
+                else {
+                    document.querySelector("nav").classList.remove("fixed");
+                }
+            }
+            document.addEventListener("scroll", navFixed);
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1 class="logo">
+            <a href="#">
+                <img src="./images/logo.svg" alt="">
+            </a>
+        </h1>
+        <nav>
+            <ul id="nav">
+                <li><a href="#">menu1</a></li>
+                <li><a href="#">menu2</a></li>
+                <li><a href="#">menu3</a></li>
+                <li><a href="#">menu4</a></li>
+                <li><a href="#">menu5</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2 class="title">title1</h2>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+            <p>오늘날씨 좋아요</p>
+        </section>
+        <section>
+            <h2 class="title">title2</h2>
+            <ul class="list">
+                <li class="aos-init aos-animate" 
+                data-aos="fade-up" 
+                data-aos-dutation="700"
+                data-aos-delay="0"><img src="./images/7.png" alt=""></li>
+                <li class="aos-init aos-animate" 
+                data-aos="fade-up" 
+                data-aos-dutation="700"
+                data-aos-delay="300"
+                ><img src="./images/26.png" alt=""></li>
+                <li class="aos-init aos-animate" 
+                data-aos="fade-up" 
+                data-aos-dutation="700"
+                data-aos-delay="600"
+                ><img src="./images/33.png" alt=""></li>
+            </ul>
+        </section>
+        <section>
+            <h2 class="title">title3</h2>
+            <p>오늘수요일~1</p>
+            <p>오늘수요일~2</p>
+            <p>오늘수요일~3</p>
+            <p>오늘수요일~4</p>
+            <p>오늘수요일~5</p>
+            <p>오늘수요일~6</p>
+            <p>오늘수요일~7</p>
+            <p>오늘수요일~8</p>
+            <p>오늘수요일~9</p>
+            <p>오늘수요일~10</p>
+            <p>오늘수요일~11</p>
+            <p>오늘수요일~12</p>
+            <p>오늘수요일~13</p>
+            <p>오늘수요일~14</p>
+            <p>오늘수요일~15</p>
+            <p>오늘수요일~16</p>
+            <p>오늘수요일~17</p>
+            <p>오늘수요일~18</p>
+            <p>오늘수요일~19</p>
+            <p>오늘수요일~20</p>
+            <p>오늘수요일~21</p>
+            <p>오늘수요일~22</p>
+            <p>오늘수요일~23</p>
+            <p>오늘수요일~24</p>
+            <p>오늘수요일~25</p>
+            <p>오늘수요일~26</p>
+            <p>오늘수요일~27</p>
+            <p>오늘수요일~28</p>
+            <p>오늘수요일~29</p>
+            <p>오늘수요일~30</p>
+            <p>오늘수요일~31</p>
+            <p>오늘수요일~32</p>
+            <p>오늘수요일~33</p>
+            <p>오늘수요일~34</p>
+            <p>오늘수요일~35</p>
+            <p>오늘수요일~36</p>
+            <p>오늘수요일~37</p>
+            <p>오늘수요일~38</p>
+            <p>오늘수요일~39</p>
+            <p>오늘수요일~40</p>
+            <p>오늘수요일~41</p>
+            <p>오늘수요일~42</p>
+            <p>오늘수요일~43</p>
+            <p>오늘수요일~44</p>
+            <p>오늘수요일~45</p>
+            <p>오늘수요일~46</p>
+            <p>오늘수요일~47</p>
+            <p>오늘수요일~48</p>
+            <p>오늘수요일~49</p>
+            <p>오늘수요일~50</p>
+        </section>
+    </main>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>

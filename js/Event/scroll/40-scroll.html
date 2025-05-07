@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pos{
+            position: fixed;
+            background-color: pink;
+            font-size:100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="pos">00</div>
+    <p>문단1</p>
+    <p>문단2</p>
+    <p>문단3</p>
+    <p>문단4</p>
+    <p>문단5</p>
+    <p>문단6</p>
+    <p>문단7</p>
+    <p>문단8</p>
+    <p>문단9</p>
+    <p>문단10</p>
+    <p>문단11</p>
+    <p>문단12</p>
+    <p>문단13</p>
+    <p>문단14</p>
+    <p>문단15</p>
+    <p>문단16</p>
+    <p>문단17</p>
+    <p>문단18</p>
+    <p>문단19</p>
+    <p>문단20</p>
+    <p>문단21</p>
+    <p>문단22</p>
+    <p>문단23</p>
+    <p>문단24</p>
+    <p>문단25</p>
+    <p>문단26</p>
+    <p>문단27</p>
+    <p>문단28</p>
+    <p>문단29</p>
+    <p>문단30</p>
+    <p>문단31</p>
+    <p>문단32</p>
+    <p>문단33</p>
+    <p>문단34</p>
+    <p>문단35</p>
+    <p>문단36</p>
+    <p>문단37</p>
+    <p>문단38</p>
+    <p>문단39</p>
+    <p>문단40</p>
+    <p>문단41</p>
+    <p>문단42</p>
+    <p>문단43</p>
+    <p>문단44</p>
+    <p>문단45</p>
+    <p>문단46</p>
+    <p>문단47</p>
+    <p>문단48</p>
+    <p>문단49</p>
+    <p>문단50</p>
+    <p>문단51</p>
+    <p>문단52</p>
+    <p>문단53</p>
+    <p>문단54</p>
+    <p>문단55</p>
+    <p>문단56</p>
+    <p>문단57</p>
+    <p>문단58</p>
+    <p>문단59</p>
+    <p>문단60</p>
+    <p>문단61</p>
+    <p>문단62</p>
+    <p>문단63</p>
+    <p>문단64</p>
+    <p>문단65</p>
+    <p>문단66</p>
+    <p>문단67</p>
+    <p>문단68</p>
+    <p>문단69</p>
+    <p>문단70</p>
+    <p>문단71</p>
+    <p>문단72</p>
+    <p>문단73</p>
+    <p>문단74</p>
+    <p>문단75</p>
+    <p>문단76</p>
+    <p>문단77</p>
+    <p>문단78</p>
+    <p>문단79</p>
+    <p>문단80</p>
+    <p>문단81</p>
+    <p>문단82</p>
+    <p>문단83</p>
+    <p>문단84</p>
+    <p>문단85</p>
+    <p>문단86</p>
+    <p>문단87</p>
+    <p>문단88</p>
+    <p>문단89</p>
+    <p>문단90</p>
+    <p>문단91</p>
+    <p>문단92</p>
+    <p>문단93</p>
+    <p>문단94</p>
+    <p>문단95</p>
+    <p>문단96</p>
+    <p>문단97</p>
+    <p>문단98</p>
+    <p>문단99</p>
+    <p>문단100</p>
+    <script>
+        // scroll 이벤트로 scroll위치값 찾기
+        document.addEventListener("scroll",(e)=>{
+            console.log(e);
+            console.log(e.target,e.currentTarget,e.type);
+            //스크롤의 위치값
+            let sPos = document.documentElement.scrollTop;
+            let posEl = document.querySelector(".pos");
+            posEl.innerHTML=sPos;
+        })
+    </script>
+</body>
+</html>

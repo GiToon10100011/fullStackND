@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //동물클래스
+      //상태변수, 동물의 종류, 속도
+      //메서드
+      //run 동물 누구누구는 속도가 얼마이다~ 출력하기
+      //stop 동물 누구누구가 멈췄습니다
+
+      class Animal {
+        //상태변수
+        //생성자로 속성의 기본값 정의 가능
+        constructor(kind, speed) {
+          this.kind = kind;
+          this.speed = 0;
+        }
+
+        //메서드
+        //메소드로 값을 받아와 생성자 항목 업데이트 가능
+        run(speed) {
+          this.speed = speed;
+          console.log(`${this.kind}는 속도가 ${this.speed}야`);
+        }
+        stop() {
+          console.log(`${this.kind}가 멈췄습니다`);
+        }
+
+        //메서드
+      }
+
+      //강아지
+      let dog = new Animal("강아지");
+      dog.run(20);
+      dog.stop();
+
+      class Buds extends Animal {
+        hide() {
+          console.log(this.kind);
+        }
+        stop() {
+          super.stop();
+        }
+      }
+
+      let bud = new Buds("무당벌레");
+      bud.run(20);
+      bud.stop();
+    </script>
+  </body>
+</html>

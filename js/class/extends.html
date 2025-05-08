@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //사람과 관련된 클래스
+      class Person {
+        constructor(name, age, tel, location) {
+          this.name = name;
+          this.age = age;
+          this.tel = tel;
+          this.location = location;
+        }
+        nextYear() {
+          return Number(this.age) + 1;
+        }
+      }
+
+      let person = new Person("염동훈", 78, "1234-5678", "송파구");
+      console.log(person);
+      console.log(person.nextYear());
+
+      class Cafe extends Person {
+        constructor(name, age, tel, location, drink) {
+          super(name, age, tel, location);
+          this.drink = drink;
+        }
+        order() {
+          return `${this.name}은 ${this.drink}를 주문햇다. 효과는 굉장했다!`;
+        }
+      }
+
+      let cafe = new Cafe("염동훈", 78, "1234-5678", "송파구", "아메리카노 ");
+      console.log(cafe.order());
+
+      
+    </script>
+  </body>
+</html>

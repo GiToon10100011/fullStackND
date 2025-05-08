@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Person(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+      Person.prototype.greet = function () {
+        console.log(`안녕하세요 저는 ${this.name}입니다. 나이는 ${this.age}`);
+      };
+
+      const ydh = new Person("염동훈", 78);
+      ydh.greet();
+
+      //클래스
+      class Person2 {
+        constructor(name, age) {
+          //매개변수의 값을 객체의 속성값으로 지정해주기, 추후에 타입스크립트 사용하면 public으로 접근 제어가 가능해져 해당 과정이 필요없어진다. 
+          this.name = name;
+          this.age = age;
+        }
+        greet2() {
+          console.log(
+            `안녕하세요 저는 ${this.name}입니다. 나이는 ${this.age}세입니다`
+          );
+        }
+      }
+
+      const ydh2 = new Person2("염동훈", 78);
+      ydh2.greet2();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <span class="car"></span>
+    <script>
+      //차 클래스 만들기
+      class Car {
+        constructor(brand, name, year) {
+          this.brand = brand;
+          this.name = name;
+          this.year = year;
+        }
+      }
+
+      let myCar1 = new Car("벤츠", "S클래스", "1998");
+      let myCar2 = new Car("포르쉐", "911", "1972");
+
+      document.querySelector(
+        ".car"
+      ).innerHTML = `염동훈 차는 ${myCar2.brand} ${myCar2.name}  ㄷㄷ`;
+    </script>
+  </body>
+</html>

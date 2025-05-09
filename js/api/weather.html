@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .weather-wrap {
+        min-width: 480px;
+        width: 90%;
+        background: dodgerblue;
+        color: #fff;
+        text-align: center;
+        padding: 40px;
+        margin: 100px auto;
+        border-radius: 20px;
+      }
+    </style>
+    <script defer type="module" src="./weather.js"></script>
+  </head>
+  <body>
+    <div class="weather-wrap">
+      <div class="weather">
+        <p class="icon"><img src="" alt="" /></p>
+        <p>
+          <span class="temp"></span>
+        </p>
+        <p class="description"></p>
+        <p class="place"></p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>지도 생성하기</title>
+  </head>
+  <body>
+    <!-- 지도를 표시할 div 입니다 -->
+    <div id="map" style="width: 100%; height: 350px"></div>
+    <script type="module">
+      import { kakaokey } from "./keys.js";
+      
+      // 위치 정보 가져오기 - 비동기 함수로 직접 선언
+      async function getCurrentPosition() {
+        return new Promise((resolve, reject) => {
+          navigator.geolocation.getCurrentPosition(resolve, reject);
+        });
+      }
+      
+      // 카카오맵 로드 - 비동기 함수로 직접 선언
+      async function loadKakaoMap() {
+        return new Promise((resolve) => {
+          const script = document.createElement("script");
+          script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${kakaokey}&autoload=false`;
+          script.onload = () => {
+            kakao.maps.load(resolve);
+          };
+          document.head.appendChild(script);
+        });
+      }
+      
+      // 메인 함수
+      async function initMap() {
+        try {
+          // 1. 카카오맵 API 로드
+          await loadKakaoMap();
+          
+          // 2. 위치 정보 가져오기
+          const position = await getCurrentPosition();
+          const { latitude, longitude } = position.coords;
+          
+          // 3. 지도 초기화 및 생성
+          const mapContainer = document.getElementById("map");
+          const mapOption = {
+            center: new kakao.maps.LatLng(latitude, longitude),
+            level: 3
+          };
+          
+          const map = new kakao.maps.Map(mapContainer, mapOption);
+          
+        } catch (error) {
+          console.error("지도 초기화 오류:", error);
+        }
+      }
+      
+      // 실행
+      initMap();
+    </script>
+  </body>
+</html>

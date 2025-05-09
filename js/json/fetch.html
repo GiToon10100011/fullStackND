@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      fetch("data.json")
+        .then((response) => {
+          //상태, 정상, body, headers등의 전체 정보가 들어있음. 
+          console.log(response);
+          //json 객체로 파싱 
+          return response.json();
+        })
+        .then((data) => {
+          console.log(data);
+          return data;
+        })
+        .catch((err) => console.error(err));
+    </script>
+  </body>
+</html>

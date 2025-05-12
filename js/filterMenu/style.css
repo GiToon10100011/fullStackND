@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.menu-container {
+  width: 500px;
+  height: 500px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  .menu-wrap {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    ul {
+      display: flex;
+      gap: 10px;
+      li {
+        button {
+          background: #eee;
+          border: none;
+          padding: 6px 14px;
+          border-radius: 20px;
+          text-transform: capitalize;
+          &.active {
+            background: #222;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}

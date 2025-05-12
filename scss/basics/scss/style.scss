@@ -1,0 +1,59 @@
+//variables
+$main-color: #009223;
+$main-text-color: #222;
+$title-size: 50px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+  font: {
+    family: "돋움";
+    weight: 900;
+    size: 50px;
+  }
+}
+
+header {
+  border-top: 3px solid $main-color;
+
+  .content-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1260px;
+    background: rgba($color: red, $alpha: 0.2);
+    margin: 0 auto;
+  }
+
+  nav {
+    #menu {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      li {
+        a {
+          font-size: 18px;
+          &:hover {
+            color: $main-color;
+          }
+        }
+        &.menu {
+          &-first {
+            background: #ccc;
+          }
+        }
+      }
+    }
+  }
+}

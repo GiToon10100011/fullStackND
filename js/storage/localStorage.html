@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let data = {
+        name: "염동훈",
+        age: 78,
+        gender: "email",
+      };
+
+      let arr = [1, 2, 3];
+
+      const objString = JSON.stringify(data);
+      const arrString = JSON.stringify(arr);
+
+      localStorage.setItem("person", objString);
+      localStorage.setItem("num", arrString);
+
+      console.log(localStorage);
+
+      const keys = Object.keys(localStorage);
+
+      for (const key of keys) {
+        const value = localStorage.getItem(key);
+        document.write(`${key}: ${value}<br>`);
+      }
+
+      for (const key in localStorage) {
+        const value = localStorage.getItem(key);
+        document.write(`${key}: ${value}<br>`);
+      }
+
+      const localData = localStorage.getItem("person");
+      console.log(localStorage.key(0));
+      console.log(JSON.parse(localData));
+      console.log(localStorage.length);
+      localStorage.removeItem("num");
+      console.log(localStorage.length);
+      localStorage.clear();
+    </script>
+  </body>
+</html>

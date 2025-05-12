@@ -1,0 +1,71 @@
+@mixin myText($size: 18, $color: pink) {
+  font-size: #{$size}px;
+  color: $color;
+  text-decoration: underline;
+}
+
+@mixin myFlex($direction: row, $justify: center, $align: center, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: #{$gap}px;
+}
+
+@mixin myPos(
+  $position: absolute,
+  $top: 0,
+  $left: 0,
+  $bottom: auto,
+  $right: auto
+) {
+  position: $position;
+  top: $top;
+  left: $left;
+  bottom: $bottom;
+  right: $right;
+}
+
+@mixin mobile-screen {
+  @media screen and (max-width: 768px) {
+    // 부모로 받은 값을 그대로 씀.
+    @content;
+  }
+}
+
+html, body{
+  height: 1000vh;
+}
+
+header {
+  @include myPos($position: fixed);
+  @include myFlex($justify: space-between);
+  @include mobile-screen() {
+    @include myPos($position: static);
+  }
+  width: 100%;
+  background-color: pink;
+  h1 {
+    height: 1rem;
+    background: #ccc;
+    @include myText(30);
+  }
+  .nav {
+    @include myFlex($gap: 50);
+    li {
+      a {
+        @include myText(green);
+      }
+    }
+  }
+}
+
+section {
+  @include mobile-screen(){
+    background-color: pink;
+  }
+  background-color: green;
+  .list-wrap {
+    @include myFlex();
+  }
+}

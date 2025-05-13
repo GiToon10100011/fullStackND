@@ -1,0 +1,77 @@
+/* 모든 선택자 여백제거 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* a 밑줄제거 */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* li장식제거 */
+menu,
+ol,
+ul {
+    list-style: none;
+}
+
+/* img,video 정렬 크기 */
+img,
+video {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+/* input,button,textarea,select 폰트 부모에게 상속 */
+input,
+button,
+textarea,
+select {
+    font:inherit;
+}
+
+/* input:focus 테두리 제거 */
+input:focus{
+    outline: none;
+}
+/* table 테두리 */
+table{
+    border-collapse: collapse;
+}
+
+/* .blind */
+.blind{
+    position:absolute;
+    top:-9999px;
+}
+/* .skip */
+.skip-menu a{
+    display: block;
+    width: 100%;
+    position:absolute;
+    top:-9999px;
+    line-height: 50px;
+    text-align: center;
+    background: #0099DA;
+}
+.skip-menu a:focus{
+    top:0;
+    outline: none;
+}
+address,i,em{
+    font-style: normal;
+}
+button{
+    cursor: pointer;
+}
+
+/* body */
+body{
+    font-family: 'Pretendard', sans-serif;
+    font-size:16px;
+    font-weight: 400;
+    letter-spacing: -0.032rem;
+}

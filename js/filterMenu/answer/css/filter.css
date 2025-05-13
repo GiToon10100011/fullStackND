@@ -1,0 +1,24 @@
+.menu-container {
+    width: 500px;
+    height: 500px;
+    padding: 20px;
+    border: 1px solid #ccc;
+
+    .menu-wrap {
+        ul{
+            display: flex;
+            gap: 10px;
+            li{
+                button{
+                    background:#eee;
+                    border:none;
+                    padding: 5px 20px;
+                }
+                button.active{
+                    background: #222;
+                    color:white;
+                }
+            }
+        }
+    }
+}

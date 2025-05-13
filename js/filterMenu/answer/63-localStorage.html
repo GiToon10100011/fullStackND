@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //localStorage에 저장할 데이터 객체
+        const obj ={
+            name:"홍길동",
+            age:20,
+            gender:true
+        }
+        //배열
+        const num=[1,2,3];
+        //객체, 배열을 저장하기 위해서는 json 문자열로 변환 
+        const objString = JSON.stringify(obj);
+        const numString = JSON.stringify(num);
+
+        //setItem
+        window.localStorage.setItem("person",objString);
+        window.localStorage.setItem("num",numString);
+
+        //가져오기
+        const obj1 = window.localStorage.getItem("person");
+        console.log(obj1);
+
+        //JSON 문자열을 객체 parse
+        const jsonObj = JSON.parse(obj1);
+        console.log(jsonObj);
+
+    </script>
+</body>
+</html>

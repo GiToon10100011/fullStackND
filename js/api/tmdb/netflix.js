@@ -1,4 +1,4 @@
-import TMDB_KEY from "./keys.js";
+import { TMDB_KEY, TMDB_JWT } from "./keys.js";
 const GENRE_URL = `https://api.themoviedb.org/3/genre/movie/list?API_KEY=${TMDB_KEY}&language=ko-KR`;
 const POPULAR_MOVIES_URL = `https://api.themoviedb.org/3/movie/popular?API_KEY=${TMDB_KEY}&language=ko-KR`;
 
@@ -10,8 +10,7 @@ const options = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyNjkzYzhiMDk3YzFmNmJhNWM3N2FlZGVkOWRkMTYwYyIsIm5iZiI6MTcyNDgwMzc1MS40OTYsInN1YiI6IjY2Y2U2YWE3NmMwYjY3Y2JjMWJiMGU1MyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.UsjdF2tQKFnR_JQ2I3B70AGza-uzxE2GY3ROU_kkJ08",
+    Authorization: `Bearer ${TMDB_JWT}`,
   },
 };
 

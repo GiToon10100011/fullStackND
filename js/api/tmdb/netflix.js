@@ -14,15 +14,53 @@ const options = {
   },
 };
 
-const genreData = fetch(GENRE_URL, options);
-const popularMoviesData = fetch(POPULAR_MOVIES_URL, options);
+// 전역 변수로 데이터 저장
+let allGenres = [];
+let allMovies = [];
+
+// 초기 데이터 로딩 함수
+const loadInitialData = async () => {
+  const genreResponse = await fetch(GENRE_URL, options);
+  const genreData = await genreResponse.json();
+  allGenres = genreData.genres;
+
+  const moviesResponse = await fetch(POPULAR_MOVIES_URL, options);
+  const moviesData = await moviesResponse.json();
+  allMovies = moviesData.results;
+
+  showGenres();
+  showMovies();
+};
+
+const htmlMapper = (movies) => {
+  return movies.map(
+    (movie) =>
+      `<li>
+     <div><img src="https://media.themoviedb.org/t/p/w500${
+       movie.poster_path
+     }" alt="${movie.title} poster" class="poster-img"></div>
+              <div><strong>${
+                movie.title
+              }</strong><span>${movie.vote_average.toFixed(1)}점</span></div>
+    </li>`
+  );
+};
+
+const searchMovies = (e) => {
+  let searchedMovies = [...allMovies];
+  searchedMovies = searchedMovies.filter((movie) =>
+    movie.title.includes(e.target.value)
+  );
+  movieList.innerHTML = htmlMapper(searchedMovies).join("");
+};
 
 const selectGenre = (e) => {
   e.target.classList.add("active");
+  showMovies(Number(e.target.id));
 };
-const showGenres = async () => {
-  const { genres } = await (await genreData).json();
-  const genreBtns = genres.map(
+
+const showGenres = () => {
+  const genreBtns = allGenres.map(
     (genre) => `<button id=${genre.id}>${genre.name}</button>`
   );
   genreList.innerHTML = `<button class="active">전체</button>${genreBtns.join(
@@ -36,10 +74,20 @@ const showGenres = async () => {
   );
 };
 
-const showMovies = async () => {
-  const { results } = await (await popularMoviesData).json();
-  console.log(results);
+const showMovies = (id) => {
+  movieList.innerHTML = "";
+  let filteredMovies = [...allMovies];
+
+  if (id) {
+    filteredMovies = filteredMovies.filter((movie) =>
+      movie.genre_ids.includes(id)
+    );
+  }
+
+  const movieItems = htmlMapper(filteredMovies);
+  movieList.innerHTML = movieItems.join("");
 };
 
-showGenres();
-showMovies();
+searchInput.addEventListener("input", searchMovies);
+
+loadInitialData();

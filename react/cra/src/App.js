@@ -1,12 +1,14 @@
 import "./App.css";
-import ClassComponent from "./components/classComponent";
+import ClassComponent from "./components/ClassComponent";
 import ClassProps from "./components/ClassProps";
+import ClassComponentState from "./components/ClassState";
 
 function App() {
   return (
     <div className="App">
       <ClassComponent />
-      <ClassProps day={"목"} time={100}/>
+      <ClassComponentState />
+      <ClassProps day={"목"} time={100} />
     </div>
   );
 }

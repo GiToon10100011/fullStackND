@@ -1,4 +1,5 @@
 import "./App.css";
+import ArrayState from "./components/ArrayState";
 import ClassComponent from "./components/ClassComponent";
 import ClassProps from "./components/ClassProps";
 import ClassComponentState from "./components/ClassState";
@@ -11,6 +12,7 @@ function App() {
       <ClassComponentState />
       <ClassProps day={"목"} time={100} />
       <ClassUseState />
+      <ArrayState />
     </div>
   );
 }

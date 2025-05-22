@@ -7,6 +7,15 @@ import ClassUseState from "./components/ClassUseState";
 import { ColorBox } from "./components/ColorBox";
 import StateFilter from "./components/StateFilter";
 import StateParent from "./components/StateParent";
+import DarkContextComponent from "./components/DarkContext";
+import UseEffect from "./components/UseEffect";
+import UseContext from "./components/UseContext";
+import UseContextObject31 from "./components/UseContextObject31";
+import UseEffectClean from "./components/UseEffectClean";
+import UseEffectapi33 from "./components/UseEffectapi33";
+import UseEffect33 from "./components/UseEffect33";
+import UseFillter30 from "./components/UseFillter30";
+import UserEffect32 from "./components/UserEffect32";
 
 function App() {
   return (
@@ -19,6 +28,8 @@ function App() {
       <StateParent />
       <ColorBox />
       <StateFilter />
+      <DarkContextComponent />
+      <UseEffect />
     </div>
   );
 }

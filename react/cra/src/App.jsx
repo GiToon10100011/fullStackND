@@ -16,6 +16,8 @@ import UseEffectapi33 from "./components/UseEffectapi33";
 import UseEffect33 from "./components/UseEffect33";
 import UseFillter30 from "./components/UseFillter30";
 import UserEffect32 from "./components/UserEffect32";
+import UseRef from "./components/UseRef";
+import UseRef2 from "./components/UseRef2";
 
 function App() {
   return (
@@ -30,6 +32,8 @@ function App() {
       <StateFilter />
       <DarkContextComponent />
       <UseEffect />
+      <UseRef />
+      <UseRef2 />
     </div>
   );
 }

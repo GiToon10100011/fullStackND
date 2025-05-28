@@ -1,0 +1,54 @@
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  background: linear-gradient(to right, #2c3e50, #3498db);
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.3s ease;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+  nav {
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+  & > :global(.inner) {
+    padding-top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  .logout {
+    text-transform: uppercase;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    &:hover {
+      background-color: #c82333;
+    }
+  }
+}

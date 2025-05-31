@@ -1,0 +1,9 @@
+.big-title-box {
+  font-size: 5rem;
+  span {
+    display: block;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}

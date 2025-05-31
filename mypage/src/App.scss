@@ -1,0 +1,73 @@
+$메인컬러: #646cff;
+$메인글자: #333;
+$둥글기: 30px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: $메인글자;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+@mixin myFlex($gap: 0) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: $gap;
+}
+
+.wrap {
+  .content-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  header {
+    line-height: 80px;
+    position: fixed;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+
+    .content-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      div {
+        @include myFlex();
+        ul {
+          @include myFlex(50px);
+          li {
+            font-size: 1.13rem;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+
+  .index {
+    height: 100vh;
+    .content-inner {
+      @include myFlex();
+    }
+  }
+
+  .main {
+    height: 100vh;
+    @include myFlex();
+    .content-inner {
+      @include myFlex();
+    }
+  }
+
+  footer {
+  }
+}

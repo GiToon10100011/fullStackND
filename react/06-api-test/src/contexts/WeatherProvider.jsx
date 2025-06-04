@@ -6,8 +6,6 @@ import apiWrapper from "../lib/utils/apiWrapper";
 // 선택할 국가
 const WEATHER_API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
 
-console.log(WEATHER_API_KEY);
-
 const WeatherProvider = ({ children }) => {
   const [selectedCountry, setSelectedCountry] = useState("Korea");
   const [weather, setWeather] = useState(null);

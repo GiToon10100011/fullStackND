@@ -19,9 +19,24 @@ const Weather = () => {
         ))}
       </select>
       <div>
-        <h1>{weather.name}</h1>
-        <p>{weather.main.temp}°C</p>
-        <p>{weather.weather[0].description}</p>
+        <h1>{countries[selectedCountry]}</h1>
+        <p>
+          <img
+            src={`http://openweathermap.org/img/wn/${weather?.weather[0].icon}@2x.png`}
+            alt="weather icon"
+            width={100}
+            height={100}
+          />
+        </p>
+        <p>
+          온도: <strong>{weather?.main.temp}°C</strong>
+        </p>
+        <p>
+          날씨: <strong>{weather?.weather[0].description}</strong>
+        </p>
+        <p>
+          풍속: <strong>{weather?.wind.speed}m/s</strong>
+        </p>
       </div>
     </div>
   );

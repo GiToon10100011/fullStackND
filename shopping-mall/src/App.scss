@@ -1,0 +1,28 @@
+$main-color: #141414;
+$point-color: #e60023;
+$section-title: 2.5rem;
+$section-subtitle: 1.25rem;
+
+@mixin flex($justify: space-between, $align: center, $gap: 0, $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+  flex-direction: $direction;
+}
+
+.content-inner {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.container {
+  padding: 100px 0;
+  .title-box {
+    .title {
+    }
+    .subtitle {
+    }
+  }
+}

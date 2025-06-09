@@ -1,0 +1,43 @@
+@import url("//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: #222;
+  text-decoration: none;
+}
+
+img {
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+button {
+  background: white;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  font-family: inherit;
+}
+
+address,
+i,
+em {
+  font-style: normal;
+}
+
+html,
+body {
+  font-family: "SpoqaHanSans", sans-serif;
+}

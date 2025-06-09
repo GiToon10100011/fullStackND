@@ -1,0 +1,85 @@
+@use "../../App.scss" as *;
+
+header {
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+  .content-inner {
+    @include flex($justify: space-between, $align: center);
+    .header-left {
+      gap: 50px;
+      @include flex($justify: flex-start, $align: center, $gap: 20px);
+      .logo {
+        img {
+          width: 100px;
+        }
+      }
+      .nav-list {
+        @include flex($justify: flex-start, $align: center, $gap: 20px);
+        li {
+          a {
+            font-size: 1.13rem;
+            font-weight: 600;
+            color: #000;
+            &:hover {
+              color: $point-color;
+            }
+          }
+        }
+      }
+    }
+    .header-right {
+      @include flex($justify: flex-end, $align: center, $gap: 20px);
+      ul {
+        @include flex($justify: flex-end, $align: center, $gap: 20px);
+        li {
+          position: relative;
+          a {
+            @include flex(
+              $justify: center,
+              $align: center,
+              $gap: 4px,
+              $direction: column
+            );
+            font-size: 0.8rem;
+            img {
+              height: 24px;
+            }
+            .cart-count {
+              position: absolute;
+              top: -4px;
+              right: 0;
+              background: $point-color;
+              border-radius: 50%;
+              padding: 2px 5px;
+              margin-left: 5px;
+              font-size: 0.8rem;
+              color: #fff;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+      .search-container {
+        position: relative;
+        input {
+          line-height: 30px;
+          padding: 0 10px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+        .search-btn {
+          position: absolute;
+          right: 10px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

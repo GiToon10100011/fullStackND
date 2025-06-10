@@ -1,0 +1,14 @@
+@use "../../App.scss" as *;
+
+.title-box {
+  text-align: center;
+  .title {
+    font-size: $section-title;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  .sub-title {
+    font-size: $section-subtitle;
+    font-weight: 400;
+  }
+}

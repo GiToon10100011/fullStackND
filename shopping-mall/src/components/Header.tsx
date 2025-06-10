@@ -8,11 +8,11 @@ type MenuItem = {
 };
 
 const menuItems: MenuItem[] = [
-  { key: "home", label: "홈" },
-  { key: "men", label: "남성" },
-  { key: "women", label: "여성" },
-  { key: "jewelry", label: "악세서리" },
-  { key: "electronics", label: "전자기기" },
+  { key: "/", label: "홈" },
+  { key: "/men", label: "남성" },
+  { key: "/women", label: "여성" },
+  { key: "/jewelry", label: "악세서리" },
+  { key: "/electronics", label: "전자기기" },
 ];
 
 const Header = () => {
@@ -21,12 +21,14 @@ const Header = () => {
       <div className="content-inner">
         <div className="header-left">
           <h1 className="logo">
-            <img src="/images/logo.svg" alt="logo" />
+            <Link to="/">
+              <img src="/images/logo.svg" alt="logo" />
+            </Link>
           </h1>
           <ul className="nav-list">
             {menuItems.map((item) => (
               <li className="nav-item" key={item.key}>
-                <Link to={`/${item.key}`}>{item.label}</Link>
+                <Link to={`${item.key}`}>{item.label}</Link>
               </li>
             ))}
           </ul>

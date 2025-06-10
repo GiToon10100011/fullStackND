@@ -11,6 +11,14 @@ $section-subtitle: 1.25rem;
   flex-direction: $direction;
 }
 
+@mixin button($color: $point-color, $bg-color: white, $border-color: $point-color) {
+  background-color: $bg-color;
+  color: $color;
+  border: 1px solid $border-color;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
 .content-inner {
   max-width: 1600px;
   margin: 0 auto;
@@ -19,10 +27,7 @@ $section-subtitle: 1.25rem;
 
 .container {
   padding: 100px 0;
-  .title-box {
-    .title {
-    }
-    .subtitle {
-    }
+  .sub-banner {
+    margin-bottom: 40px;
   }
 }

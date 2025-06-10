@@ -1,0 +1,123 @@
+@use "../../App.scss" as *;
+
+.product-detail-box {
+  @include flex($justify: flex-start, $gap: 24px);
+  padding: 24px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .product-image {
+    flex: 1;
+    img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      padding: 12px;
+
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+  }
+
+  .product-info {
+    flex: 1;
+    .product-title {
+      font-size: $section-title;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: $main-color;
+      line-height: 1.4;
+    }
+
+    .product-description {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .product-price {
+      margin-bottom: 20px;
+      
+      .original-price {
+        font-size: 1.2rem;
+        color: #999;
+        text-decoration: line-through;
+        margin-bottom: 8px;
+      }
+
+      .sale-price {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: $main-color;
+        margin-bottom: 8px;
+      }
+
+      .discount-rate {
+        display: inline-block;
+        padding: 4px 8px;
+        background-color: $point-color;
+        color: white;
+        border-radius: 4px;
+        font-size: 0.9rem;
+      }
+    }
+
+    .product-rating {
+      margin-bottom: 20px;
+      @include flex($gap: 20px);
+
+      p {
+        margin-bottom: 10px;
+        color: #666;
+        font-size: 0.9rem;
+      }
+    }
+
+    .product-category,
+    .product-brand,
+    .product-tags,
+    .product-reviews {
+      margin-bottom: 15px;
+      
+      p {
+        color: #666;
+        font-size: 0.9rem;
+      }
+    }
+
+    .product-actions {
+      margin-top: 20px;
+      
+      button {
+        @include button($color: $main-color, $bg-color: white, $border-color: $main-color);
+        margin-right: 10px;
+        cursor: pointer;
+        &:hover { 
+          filter: brightness(0.8);
+        }
+        &:last-child {
+          background-color: $main-color;
+          color: white;
+          border-color: $main-color;
+          &:hover{
+            filter: brightness(0.8);
+          }
+        }
+      }
+    }
+  }
+}
+
+.loading {
+  text-align: center;
+  padding: 100px 0;
+  font-size: 1.2rem;
+  color: #666;
+}
+

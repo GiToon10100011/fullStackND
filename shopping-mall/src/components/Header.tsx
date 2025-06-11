@@ -1,6 +1,7 @@
 import React from "react";
 import "./scss/header.scss";
 import { Link } from "react-router-dom";
+import useStore from "../stores/useStore";
 
 type MenuItem = {
   key: string;
@@ -16,6 +17,8 @@ const menuItems: MenuItem[] = [
 ];
 
 const Header = () => {
+  const { currentUser, logout, cartCount } = useStore();
+  const username = currentUser ? currentUser.split("@")[0] : "";
   return (
     <header>
       <div className="content-inner">
@@ -35,22 +38,43 @@ const Header = () => {
         </div>
         <div className="header-right">
           <ul>
-            <li>
-              <Link to="/login">
-                <img src="/images/loginPassword.png" alt="login" />
-                <p>로그인</p>
-              </Link>
-            </li>
-            <li>
-              <Link to="/signup">
-                <img src="/images/loginMember.png" alt="signup" />
+            {!currentUser ? (
+              <>
+                <li>
+                  <Link to="/login">
+                    <img src="/images/loginPassword.png" alt="login" />
+                    <p>로그인</p>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/signup">
+                    <img src="/images/loginMember.png" alt="signup" />
                     <p>회원가입</p>
-              </Link>
-            </li>
+                  </Link>
+                </li>
+              </>
+            ) : (
+              <>
+                <li>
+                  <Link to="/mypage">
+                    <img src="/images/loginMember.png" alt="mypage" />
+                    <p>{username}</p>
+                  </Link>
+                </li>
+                <li>
+                  <a onClick={logout}>
+                    <img src="/images/loginPassword.png" alt="logout" />
+                    <p>로그아웃</p>
+                  </a>
+                </li>
+              </>
+            )}
             <li>
               <Link to="/cart">
                 <img src="/images/cart.png" alt="cart" />
-                <p>장바구니<span className="cart-count">0</span></p>
+                <p>
+                  장바구니<span className="cart-count">{cartCount}</span>
+                </p>
               </Link>
             </li>
           </ul>
@@ -58,7 +82,8 @@ const Header = () => {
             <input type="text" placeholder="Search" />
             <button className="search-btn">
               <img src="/images/search.png" alt="search" />
-            </button>          </div>
+            </button>{" "}
+          </div>
         </div>
       </div>
     </header>

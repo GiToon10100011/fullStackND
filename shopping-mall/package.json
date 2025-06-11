@@ -12,7 +12,7 @@
     "@types/react": "^19.1.6",
     "@types/react-dom": "^19.1.6",
     "axios": "^1.9.0",
-    "firebase": "^11.9.0",
+    "firebase": "^11.9.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-kakao-login": "^2.1.1",

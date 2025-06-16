@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>TourAPI</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f2f2f2;
+                margin: 0;
+                padding: 20px;
+            }
+            #container {
+                width: 90%;
+                max-width: 1024px;
+                margin: auto;
+                text-align: center;
+                /* border: 1px solid blue; */
+            }
+            #searchDiv {
+                width: 60%;
+                margin: 10px auto;
+                max-width: 700px;
+                text-align: center;
+                /* border: 1px solid red; */
+            }
+
+            h1 {
+                color: #333;
+                text-align: center;
+            }
+            label {
+                font-size: 1.2em;
+                margin-right: 10px;
+            }
+            #areaCode {
+                padding: 10px;
+                font-size: 1em;
+                width: 150px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+            button {
+                padding: 10px 20px;
+                font-size: 1em;
+                color: #fff;
+                background-color: #4caf50; /* 차분한 녹색 */
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+            button:hover {
+                background-color: #45a049; /* 호버 시 더 어두운 녹색 */
+            }
+
+            #results {
+                margin: 20px auto;
+                width: 80%;
+                max-width: 700px;
+                /* border: 1px solid green; */
+            }
+            #results .card {
+                background-color: #fff;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                padding: 15px;
+                margin-bottom: 10px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                display: flex;
+                align-items: center;
+            }
+            #results img {
+                max-width: 100px;
+                margin-right: 15px;
+                border-radius: 5px;
+            }
+            #results h3 {
+                margin: 0 0 10px 0;
+                color: #333; /* 다크 그레이 */
+            }
+            #results p {
+                margin: 0;
+                color: #666;
+            }
+
+            /* 모달 스타일링 */
+            .modal {
+                display: none;
+                position: fixed;
+                z-index: 1000;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+            .modal-content {
+                background-color: #fefefe;
+                margin: 15% auto;
+                padding: 20px;
+                border: 1px solid #888;
+                width: 80%;
+                max-width: 500px;
+                border-radius: 10px;
+            }
+            .close {
+                color: #aaa;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+            .close:hover,
+            .close:focus {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+            .modal-image {
+                width: 100%;
+                max-height: 300px;
+                object-fit: cover;
+                border-radius: 5px;
+                margin-bottom: 20px;
+            }
+            .modal-info {
+                color: #333;
+            }
+            .modal-info h3 {
+                margin: 0 0 10px 0;
+            }
+            .modal-info p {
+                margin: 5px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <h1>TourAPI를 이용한 관광지 정보 검색</h1>
+            <div id="searchDiv">
+                <label for="areaCode">지역 코드 입력:</label>
+                <input type="text" id="areaCode" placeholder="예: 1" />
+                <button onclick="getTourInfo()">지역정보 검색</button>
+                <h2>검색 결과</h2>
+            </div>
+            <!-- 관광지 목록 보여줄 곳 -->
+            <div id="results"></div>
+            <!-- 모달로 관광지 상세정보 보여주기 위한 구조 -->
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <img id="modalImage" class="modal-image" src="" alt="이미지" />
+                    <div id="modalContent">
+                        <!-- 상세 정보가 여기에 표시됩니다 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            const API_KEY = '여기에 TourAPI 키키 입력'; // 여기에 TourAPI 키를 입력하세요.
+            // const baseUrl = 'http://api.visitkorea.or.kr/openapi/service/rest/KorService/areaBasedList';
+            const baseUrl = `http://apis.data.go.kr/B551011/KorService1`;
+            async function getTourInfo() {
+                const areaCode = document.getElementById('areaCode').value;
+
+                const url = `${baseUrl}/areaBasedList1?serviceKey=${API_KEY}&areaCode=${areaCode}&contentTypeId=12&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=TourAPIApp&_type=json`;
+                console.log(url);
+                //여기서 요청 보내기
+            }
+
+            function displayResults(areaCode, items) {
+                const resultsDiv = document.getElementById('results');
+                resultsDiv.innerHTML = ''; // 기존 결과 초기화
+
+                if (!items) {
+                    resultsDiv.innerText = '검색 결과가 없습니다.';
+                    return;
+                }
+
+                // 여기서 반복문 돌면서 결과 진열
+            }
+            //상세정보 가져와 모달로 보여주는 함수
+            async function getDetailInfo(firstimage, contentid, contenttypeid) {
+                // alert(contentid);
+                const url = `${baseUrl}/detailInfo1?serviceKey=${API_KEY}&contentId=${contentid}&contentTypeId=${contenttypeid}&MobileOS=ETC&MobileApp=TourAPIApp&_type=json`;
+                console.log(url);
+                try {
+                    const response = await fetch(url);
+                    if (!response.ok) throw new Error('데이터를 불러오는 데 실패했습니다.');
+
+                    const data = await response.json();
+                    console.log(data);
+
+                    displayDetailResults(data.response.body.items.item, firstimage);
+                } catch (error) {
+                    document.getElementById('results').innerText = '오류: ' + error.message;
+                }
+            } //--------------------------------
+            function displayDetailResults(items, firstimage) {
+                //alert(firstimage.length);
+                const modalImage = document.getElementById('modalImage');
+                const modalContent = document.getElementById('modalContent');
+
+                modalImage.src = firstimage; // 모달에 이미지를 표시
+
+                modalContent.innerHTML = ''; // 기존 상세 정보 초기화
+
+                if (!items || items.length === 0) {
+                    modalContent.innerText = '상세 정보가 없습니다.';
+                    openModal();
+                    return;
+                }
+
+                items.forEach((item) => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.innerHTML = `
+                    <h3>${item.infoname}</h3>
+                    <p>${item.infotext}</p>
+                `;
+                    modalContent.appendChild(itemDiv);
+                });
+
+                openModal();
+            }
+
+            function openModal() {
+                document.getElementById('myModal').style.display = 'block';
+            }
+
+            function closeModal() {
+                document.getElementById('myModal').style.display = 'none';
+            }
+
+            // 모달 외부 클릭 시 닫기
+            window.onclick = function (event) {
+                const modal = document.getElementById('myModal');
+                if (event.target === modal) {
+                    closeModal();
+                }
+            };
+        </script>
+    </body>
+</html>

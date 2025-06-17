@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>다양한 폼데이터 서버에 전송하기</h1>
+    <h2>GET 방식일 때, 요청 데이터는 req.query 사용</h2>
+    <form action="/login" method="get">
+      닉네임: <input type="text" name="name" id="name" /><br /><br />
+      비밀번호: <input type="password" name="password" id="password" /><br /><br />
+      이메일: <input type="email" name="email" id="email" /><br /><br />
+      <input type="submit" value="전송" />
+    </form>
+    <hr />
+    <h2>POST 방식일 때, 요청 데이터는 req.body 사용</h2>
+    <form action="/login" method="post">
+      닉네임: <input type="text" name="name" id="name" /><br /><br />
+      비밀번호: <input type="password" name="password" id="password" /><br /><br />
+      이메일: <input type="email" name="email" id="email" /><br /><br />
+      <input type="submit" value="전송" />
+    </form>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+//npm i cookie-parser
+
+const express = require('express');
+const cookieParser = require('cookie-parser');
+
+const app = express();
+const PORT = 3333;
+// cookie-parser 미들웨어 등록
+app.use(cookieParser());
+//클의 요청을 보낼때 쿠키를 같이 보낸다. 이를  req.headers.cookie(파싱되지 않은 원시쿠키 문자열 key=value;key2=value2)를
+//통해 쿠키 값에 접근하게 되는데 이를 추출하기 위해 쿠키 파서를 사용하자
+//쿠키 파서가 없다면 추출과정이 복잡함
+//cookie-parser 미들웨어를 이용하면 "req.cookies.키값" 로 추출한다 (파싱됨)
+
+// 쿠키 설정 라우트
+app.get('/set-cookie', (req, res) => {
+    res.cookie('username', 'Tom_brown', {
+        maxAge: 1000 * 60 * 60, // 1시간 동안 유지
+        httpOnly: true, // 클라이언트에서 JS로 접근 못함
+        secure: false, // HTTPS만 허용하고 싶다면 true
+    });
+    res.send('<h1>쿠키가 설정되었습니다.</h1>');
+});
+
+// 쿠키 확인 라우트
+app.get('/get-cookie', (req, res) => {
+    const { username } = req.cookies;
+    if (username) {
+        res.send(`<h1>쿠키에서 가져온 사용자명: ${username}</h1>`);
+    } else {
+        res.send('<h1>쿠키가 없습니다.</h1>');
+    }
+});
+
+// 쿠키 삭제 라우트
+app.get('/clear-cookie', (req, res) => {
+    res.clearCookie('username');
+    res.send('<h1> 쿠키가 삭제되었습니다.</h1>');
+});
+
+app.listen(PORT, () => {
+    console.log(`서버 실행 중: http://localhost:${PORT}`);
+});

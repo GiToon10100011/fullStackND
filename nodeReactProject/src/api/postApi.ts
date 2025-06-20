@@ -7,7 +7,30 @@ export interface IPostResponse {
   count: number;
 }
 
+export interface IDetailPostResponse {
+  post: IPost;
+}
+
 export const fetchPostList = async (): Promise<IPostResponse> => {
   const response = await axiosInstance.get<IPostResponse>("/posts");
   return response.data;
+};
+
+export const fetchPostFromId = async (id: number): Promise<IPost> => {
+  const response = await axiosInstance.get<IDetailPostResponse>(`/posts/${id}`);
+  return response.data.post;
+};
+
+export const createPost = async (postData: FormData): Promise<IPost> => {
+  console.log(postData);
+  const response = await axiosInstance.post("/posts", postData, {
+    headers: {
+      "Content-Type": "multipart/form-data",
+    },
+  });
+  return response.data;
+};
+
+export const deletePost = async (id: number): Promise<void> => {
+  await axiosInstance.delete(`/posts/${id}`);
 };

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { postStore } from "../../stores/postStore";
 import { useEffect } from "react";
+import { imageUrlFormatter } from "../../utils/formatters/imageUrlFormatter";
 
 const PostList = () => {
   const fetchPostList = postStore((state) => state.fetchPostList);
@@ -24,11 +25,7 @@ const PostList = () => {
               <div className="row g-0">
                 <div className="col-12 mb-3">
                   <img
-                    src={
-                      post.imageUrl
-                        ? post.imageUrl
-                        : "https://placehold.co/600x300/e9ecef/6c757d?text=No+Image"
-                    }
+                    src={imageUrlFormatter(post.imageUrl)}
                     alt={post.title}
                     className="img-fluid rounded-top w-100 object-fit-cover"
                     style={{ height: "200px" }}

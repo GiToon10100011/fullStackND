@@ -8,7 +8,7 @@ interface IPostFormStore {
     author: string;
     title: string;
     content: string;
-    file?: File;
+    fileUrl?: string;
     newFile?: File;
   };
   //모든 속성을 옵셔널 타입으로 변경해주는 Partial
@@ -21,7 +21,7 @@ export const postFormStore = create<IPostFormStore>((set) => ({
     author: "",
     title: "",
     content: "",
-    file: undefined,
+    fileUrl: "",
     newFile: undefined,
   },
   setFormData: (data) =>
@@ -34,7 +34,7 @@ export const postFormStore = create<IPostFormStore>((set) => ({
         author: "",
         title: "",
         content: "",
-        file: undefined,
+        fileUrl: "",
         newFile: undefined,
       },
     }),

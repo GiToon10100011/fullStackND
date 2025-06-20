@@ -3,7 +3,16 @@ import { Link } from "react-router-dom";
 
 const SideMenu = () => {
   return (
-    <Stack gap={2} className="mx-auto w-100">
+    <Stack 
+      gap={2} 
+      className="mx-auto w-100 sticky-top" 
+      style={{ 
+        position: 'sticky',
+        top: '80px',
+        zIndex: 1020,
+        alignSelf: 'flex-start'
+      }}
+    >
       <Button variant="primary" as={Link as any} to="/">
         Home
       </Button>

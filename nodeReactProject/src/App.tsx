@@ -6,6 +6,8 @@ import SideMenu from "./components/SideMenu";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import Posts from "./pages/Posts";
+import PostDetail from "./pages/PostDetail";
+import EditPost from "./pages/PostEdit";
 
 function App() {
   return (
@@ -31,6 +33,8 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/posts" element={<Posts />} />
+                <Route path="/posts/:id" element={<PostDetail />} />
+                <Route path="/postEdit/:id" element={<EditPost />} />
               </Routes>
             </Col>
           </Row>

@@ -31,9 +31,9 @@ const uploader = multer({
 });
 
 //라우팅 설정
-router.get("/", postController.getPosts);
 router.get("/:id", postController.getPostById);
 router.post("/", uploader.single("file"), postController.createPost);
 router.delete("/:id", postController.deletePost);
+router.put("/:id", uploader.single("file"), postController.updatePost);
 
 module.exports = router;

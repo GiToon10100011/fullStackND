@@ -8,6 +8,9 @@ import Footer from "./components/Footer";
 import Posts from "./pages/Posts";
 import PostDetail from "./pages/PostDetail";
 import EditPost from "./pages/PostEdit";
+import Signup from "./pages/Signup";
+import UserList from "./pages/Users";
+import LoginModal from "./components/users/LoginModal";
 
 function App() {
   return (
@@ -35,6 +38,9 @@ function App() {
                 <Route path="/posts" element={<Posts />} />
                 <Route path="/posts/:id" element={<PostDetail />} />
                 <Route path="/postEdit/:id" element={<EditPost />} />
+                <Route path="/signup" element={<Signup />} />
+                <Route path="/admin/users" element={<UserList />} />
+                {/* <Route path="/login" element={<LoginModal />} /> */}
               </Routes>
             </Col>
           </Row>
@@ -44,6 +50,7 @@ function App() {
         </BrowserRouter>
       </div>
       <Footer />
+      <LoginModal />
     </>
   );
 }

@@ -5,14 +5,19 @@ import axiosInstance from "./axiosInstance";
 export interface IPostResponse {
   posts: IPost[];
   count: number;
+  totalPages: number;
+  currentPage: number;
+  size: number;
 }
 
 export interface IDetailPostResponse {
   post: IPost;
 }
 
-export const fetchPostList = async (): Promise<IPostResponse> => {
-  const response = await axiosInstance.get<IPostResponse>("/posts");
+export const fetchPostList = async (page: number): Promise<IPostResponse> => {
+  const response = await axiosInstance.get<IPostResponse>("/posts", {
+    params: { page },
+  });
   return response.data;
 };
 
@@ -33,4 +38,17 @@ export const createPost = async (postData: FormData): Promise<IPost> => {
 
 export const deletePost = async (id: number): Promise<void> => {
   await axiosInstance.delete(`/posts/${id}`);
+};
+
+export const updatePost = async (
+  postData: FormData,
+  id: number
+): Promise<IPost> => {
+  console.log(postData);
+  const response = await axiosInstance.put(`/posts/${id}`, postData, {
+    headers: {
+      "Content-Type": "multipart/form-data",
+    },
+  });
+  return response.data;
 };

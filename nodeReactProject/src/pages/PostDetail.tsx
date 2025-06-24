@@ -31,6 +31,7 @@ const PostDetail = () => {
     if (!id) return;
     if (window.confirm("글을 삭제하시겠습니까?")) {
       await deletePost(Number(id));
+      alert("글이 삭제되었습니다.");
       navigate("/posts");
     }
   };

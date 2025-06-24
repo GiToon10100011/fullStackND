@@ -1,16 +1,18 @@
 import { Button, ListGroup, Stack } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import authStore from "../stores/authStore";
 
 const SideMenu = () => {
+  const { showModal, setShowModal } = authStore();
   return (
-    <Stack 
-      gap={2} 
-      className="mx-auto w-100 sticky-top" 
-      style={{ 
-        position: 'sticky',
-        top: '80px',
+    <Stack
+      gap={2}
+      className="mx-auto w-100 sticky-top"
+      style={{
+        position: "sticky",
+        top: "80px",
         zIndex: 1020,
-        alignSelf: 'flex-start'
+        alignSelf: "flex-start",
       }}
     >
       <Button variant="primary" as={Link as any} to="/">
@@ -21,7 +23,9 @@ const SideMenu = () => {
       </Button>
       <div className="alert alert-danger">a님 로그인 중 ...</div>
       <Button variant="outline-success">Logout</Button>
-      <Button variant="outline-success">SignIn</Button>
+      <Button variant="outline-success" onClick={() => setShowModal(true)}>
+        SignIn
+      </Button>
       <Button variant="outline-danger">인증 테스트</Button>
       <hr></hr>
       <ListGroup>

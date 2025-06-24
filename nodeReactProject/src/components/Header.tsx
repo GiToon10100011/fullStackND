@@ -22,8 +22,10 @@ const Header = () => {
               Signup
             </Nav.Link>
             <Nav.Link href="#pricing">Pricing</Nav.Link>
-            <NavDropdown title="Dropdown" id="collapsible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+            <NavDropdown title="어드민 대시보드" id="collapsible-nav-dropdown">
+              <NavDropdown.Item as={Link} to="/admin/users">
+                회원 목록
+              </NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Another action
               </NavDropdown.Item>

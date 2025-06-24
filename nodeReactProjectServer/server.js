@@ -7,6 +7,7 @@ const cors = require("cors");
 const indexRouter = require("./src/routes/indexRouter");
 const userRouter = require("./src/routes/userRouter");
 const postRouter = require("./src/routes/postRouter");
+const adminRouter = require("./src/routes/adminRouter");
 
 const app = express();
 const port = process.env.PORT || 3333;
@@ -22,6 +23,8 @@ app.use(cors());
 app.use("/", indexRouter);
 app.use("/api/users", userRouter);
 app.use("/api/posts", postRouter);
+//관리자인지 여부를 체크하는 미들웨어 설정
+app.use("/api/admin", adminRouter);
 
 //서버가동
 app.listen(port, () => console.log(`Server is running on port ${port}`));

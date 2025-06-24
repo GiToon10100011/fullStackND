@@ -7,23 +7,35 @@ import { mapPostFromDB } from "../utils/mappers/postMapper";
 interface IPostStore {
   postList: IPost[];
   totalCount: number;
+  totalPages: number;
+  currentPage: number;
+  size: number;
   post: IPost | null;
   fetchPostList: () => Promise<void>;
   fetchPostFromId: (id: number) => Promise<void>;
   deletePost: (id: number) => Promise<void>;
+  setPage: (page: number) => void;
 }
 
-export const postStore = create<IPostStore>((set) => ({
+export const postStore = create<IPostStore>((set, get) => ({
   postList: [],
   totalCount: 0,
+  totalPages: 0,
+  currentPage: 1,
+  size: 3, //posts per page
   post: null,
+  setPage: (page: number) => {
+    set({ currentPage: page });
+  },
   fetchPostList: async () => {
     try {
       //api 호출
-      const response = await fetchPostList();
+      const response = await fetchPostList(get().currentPage);
       set({
         postList: response.posts.map(mapPostFromDB),
         totalCount: response.count,
+        totalPages: response.totalPages,
+        size: response.size,
       });
       console.log("Post list fetched successfully:", response.posts);
     } catch (error) {
@@ -34,6 +46,7 @@ export const postStore = create<IPostStore>((set) => ({
     try {
       const response = await fetchPostFromId(id);
       if (response) {
+        console.log(response);
         set({ post: mapPostFromDB(response) });
       }
     } catch (error) {
@@ -47,7 +60,7 @@ export const postStore = create<IPostStore>((set) => ({
       // 삭제 후 postList를 다시 가져오거나 업데이트하는 로직을 추가할 수 있습니다.
       await deletePost(id);
       set({ post: null });
-      await fetchPostList(); // 삭제 후 전체 글 목록을 다시 가져옵니다.
+      await fetchPostList(get().currentPage);
     } catch (error) {
       console.error((error as Error).message);
     }

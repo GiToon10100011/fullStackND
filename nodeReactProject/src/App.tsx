@@ -11,8 +11,41 @@ import EditPost from "./pages/PostEdit";
 import Signup from "./pages/Signup";
 import UserList from "./pages/Users";
 import LoginModal from "./components/users/LoginModal";
+import authStore from "./stores/authStore";
+import { useEffect } from "react";
+import { getUser, login } from "./api/userApi";
+import type { IUser } from "./components/users/types/user.type";
 
 function App() {
+  const { setUserInfo } = authStore();
+
+  const requestUserInfo = async () => {
+    // 사용자 정보를 요청하는 API 호출
+    // accessToken를 통해 서버쪽에 인증된 사용자 정보를 요청
+    try {
+      const accessToken = sessionStorage.getItem("accessToken");
+      if (!accessToken) {
+        console.warn("Access token is not available.");
+        return;
+      }
+      const response = await getUser(accessToken);
+      if (response.result === "success") {
+        // 사용자 정보를 성공적으로 가져온 경우
+        setUserInfo(response.data as IUser);
+      } else {
+        console.error("Failed to fetch user info:", response.message);
+      }
+    } catch (error) {
+      console.error("Error fetching user information:", error);
+      alert(error);
+      sessionStorage.removeItem("accessToken");
+      localStorage.removeItem("refreshToken");
+    }
+  };
+
+  useEffect(() => {
+    requestUserInfo();
+  }, []);
   return (
     <>
       <div className="container fluid py-5">

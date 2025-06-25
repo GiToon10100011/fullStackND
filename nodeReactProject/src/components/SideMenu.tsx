@@ -1,9 +1,27 @@
 import { Button, ListGroup, Stack } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import authStore from "../stores/authStore";
+import { logout } from "../api/userApi";
 
 const SideMenu = () => {
-  const { showModal, setShowModal } = authStore();
+  const navigate = useNavigate();
+  const { userInfo, setUserInfo, setShowModal } = authStore();
+  const handleLogout = async () => {
+    try {
+      await logout(userInfo?.email || "");
+      setUserInfo(null); // 사용자 정보 초기화
+      sessionStorage.removeItem("accessToken");
+      localStorage.removeItem("refreshToken");
+      alert("로그아웃 되었습니다.");
+      navigate("/");
+    } catch (error) {
+      console.error("로그아웃 중 오류 발생:", error);
+      alert("로그아웃 중 오류가 발생했습니다.");
+    } finally {
+      setShowModal(false);
+    }
+  };
+
   return (
     <Stack
       gap={2}
@@ -18,11 +36,23 @@ const SideMenu = () => {
       <Button variant="primary" as={Link as any} to="/">
         Home
       </Button>
-      <Button variant="outline-success" as={Link as any} to="/signup">
-        SignUp
-      </Button>
-      <div className="alert alert-danger">a님 로그인 중 ...</div>
-      <Button variant="outline-success">Logout</Button>
+      {!userInfo && (
+        <Button variant="outline-success" as={Link as any} to="/signup">
+          SignUp
+        </Button>
+      )}
+      {userInfo ? (
+        <div className="alert alert-danger">
+          {userInfo.name}님 로그인 중 ...
+        </div>
+      ) : (
+        <div className="alert alert-danger">로그인 중 ...</div>
+      )}
+      {userInfo && (
+        <Button variant="outline-success" onClick={handleLogout}>
+          Logout
+        </Button>
+      )}
       <Button variant="outline-success" onClick={() => setShowModal(true)}>
         SignIn
       </Button>

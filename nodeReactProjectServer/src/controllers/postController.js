@@ -34,6 +34,7 @@ exports.getPosts = async (req, res) => {
     const postQuery =
       "SELECT id, title, content, author, attach file, date_format(created_at, '%Y-%m-%d') as created_at FROM posts ORDER BY id DESC LIMIT ? OFFSET ?";
     const [posts] = await pool.query(postQuery, [size, (page - 1) * size]);
+    console.log(posts);
     return res
       .status(200)
       .json({ status: "success", size, count, posts, totalPages, page });

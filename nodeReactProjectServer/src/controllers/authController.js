@@ -130,27 +130,51 @@ exports.verifyRefreshToken = async (req, res) => {
   const { refreshToken } = req.body;
 
   if (!refreshToken) {
-    return res
-      .status(400)
-      .json({ result: "fail", message: "리프레시 토큰을 입력해주세요." });
+    return res.status(400).json({
+      result: "fail",
+      message: "리프레시 토큰이 필요합니다.",
+    });
   }
 
   try {
-    // const decoded = jwt.verify(refreshToken, process.env.JWT_REFRESH_SECRET);
-    // const user = await User.findById(decoded.userId);
-    // if (!user) {
-    //   return res.status(401).json({ error: "사용자를 찾을 수 없습니다." });
-    // }
-    // const newAccessToken = jwt.sign(
-    //   { userId: user._id },
-    //   process.env.JWT_ACCESS_SECRET,
-    //   {
-    //     expiresIn: "1h",
-    //   }
-    // );
-    // res.status(200).json({ accessToken: newAccessToken });
+    // 1. 리프레시 토큰이 유효한지 검증
+    const decoded = jwt.verify(refreshToken, process.env.JWT_REFRESH_SECRET);
+
+    // 2. DB에서 해당 토큰을 갖고 있는 사용자 조회
+    const query =
+      "SELECT id, name, email, role FROM members WHERE refresh_token = ?";
+    const [result] = await pool.query(query, [refreshToken]);
+
+    if (result.length === 0) {
+      return res.status(403).json({
+        result: "fail",
+        message: "유효하지 않은 리프레시 토큰입니다.",
+      });
+    }
+
+    const user = result[0];
+
+    // 3. 새로운 Access Token 발급
+    const newAccessToken = generateToken(
+      {
+        id: user.id,
+        email: user.email,
+        role: user.role,
+      },
+      process.env.JWT_ACCESS_SECRET,
+      "15m" // 또는 "1h"
+    );
+
+    return res.status(200).json({
+      result: "success",
+      message: "새로운 토큰이 발급되었습니다.",
+      accessToken: newAccessToken,
+    });
   } catch (error) {
-    console.error("리프레시 토큰 검증 중 오류 발생:", error);
-    res.status(500).json({ error: "서버 오류가 발생했습니다." });
+    console.error("리프레시 토큰 검증 실패:", error.message);
+    return res.status(403).json({
+      result: "fail",
+      message: "리프레시 토큰이 만료되었거나 유효하지 않습니다.",
+    });
   }
 };

@@ -38,6 +38,7 @@ const LoginModal = () => {
     data.append("email", email);
     data.append("password", password);
     try {
+      console.log("test");
       const response = await login(data);
       // 여기에 로그인 처리 추가 (예: 토큰 저장 등)
       if (response.result === "success") {

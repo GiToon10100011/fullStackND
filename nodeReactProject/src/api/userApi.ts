@@ -66,3 +66,4 @@ export const getUser = async (token: string): Promise<IUserResponse<IUser>> => {
   });
   return response.data;
 };
+

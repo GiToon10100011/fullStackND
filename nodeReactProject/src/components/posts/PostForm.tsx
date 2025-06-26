@@ -3,8 +3,10 @@ import { Button, Form } from "react-bootstrap";
 import { postFormStore } from "../../stores/postFormStore";
 import { createPost } from "../../api/postApi";
 import { postStore } from "../../stores/postStore";
+import authStore from "../../stores/authStore";
 
 const PostForm = () => {
+  const userInfo = authStore((state) => state.userInfo);
   const fileRef = useRef<HTMLInputElement>(null);
   const { formData, setFormData, resetForm } = postFormStore();
   const fetchPostList = postStore((state) => state.fetchPostList);
@@ -26,9 +28,13 @@ const PostForm = () => {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!userInfo) {
+      alert("로그인 후 작성할 수 있습니다.");
+      return;
+    }
     try {
       const postData = new FormData();
-      postData.append("author", String(formData.author));
+      postData.append("author", String(userInfo?.id));
       postData.append("title", formData.title);
       postData.append("content", formData.content);
       if (formData.newFile) {
@@ -43,7 +49,7 @@ const PostForm = () => {
       console.log("Post created successfully:", response);
       await fetchPostList();
       resetForm();
-      
+
       if (fileRef.current) {
         fileRef.current.value = ""; // 파일 입력 초기화
       }
@@ -60,8 +66,9 @@ const PostForm = () => {
             type="text"
             name="author"
             required
-            onChange={handleChange}
-            value={formData.author}
+            readOnly
+            value={userInfo?.id}
+            placeholder="로그인해야 작성할 수 있습니다."
           />
         </Form.Group>
         <Form.Group controlId="title">

@@ -45,6 +45,7 @@ const LoginModal = () => {
         alert(`${response.data?.name}님, 환영합니다!`);
         sessionStorage.setItem("accessToken", response.data?.accessToken || "");
         localStorage.setItem("refreshToken", response.data?.refreshToken || "");
+        console.log(localStorage.getItem("refreshToken"));
         setUserInfo(response.data as IUser); // 사용자 정보 저장
         setUser({ email: "", password: "" }); // 입력 필드 초기화
         setShowModal(false); // 모달 닫기

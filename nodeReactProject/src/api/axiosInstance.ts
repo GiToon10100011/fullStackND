@@ -17,13 +17,8 @@ axiosInstance.interceptors.request.use(
     const token = sessionStorage.getItem("accessToken");
     if (isTokenValid(token as string)) {
       config.headers["Authorization"] = `Bearer ${token}`;
-    } else {
-      const newAccessToken = await refreshAccessToken();
-      if (newAccessToken) {
-        sessionStorage.setItem("accessToken", newAccessToken);
-        config.headers["Authorization"] = `Bearer ${newAccessToken}`;
-      }
     }
+
     return config;
   },
   (error) => {
@@ -48,6 +43,15 @@ axiosInstance.interceptors.response.use(
     const originalRequest = error.config;
     const status = error.response?.status;
     console.error("API Error:", error.response?.data || error.message);
+
+    const isLoginReq = originalRequest.url.includes("/auth/login");
+    if (isLoginReq) {
+      // 로그인 시도 실패인 경우 → alert만
+      alert(
+        error.response?.data?.message || "로그인 정보가 올바르지 않습니다."
+      );
+      return Promise.reject(error);
+    }
 
     if (status === 400) {
       alert(error.response?.data?.message || "Bad Request");

@@ -40,6 +40,9 @@ const Header = () => {
             <Nav.Link as={Link} to="/posts">
               Posts
             </Nav.Link>
+            <Nav.Link as={Link} to="/chatting">
+              채팅
+            </Nav.Link>
             <Nav.Link eventKey={2} as={Link} to="/mypage">
               MyPage
             </Nav.Link>
@@ -51,7 +54,3 @@ const Header = () => {
 };
 
 export default Header;
-
-
-
-

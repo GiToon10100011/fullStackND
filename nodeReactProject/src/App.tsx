@@ -13,8 +13,9 @@ import UserList from "./pages/Users";
 import LoginModal from "./components/users/LoginModal";
 import authStore from "./stores/authStore";
 import { useEffect } from "react";
-import { getUser, login } from "./api/userApi";
+import { getUser } from "./api/userApi";
 import type { IUser } from "./components/users/types/user.type";
+import Chat from "./components/chat/Chat";
 
 function App() {
   const { setUserInfo } = authStore();
@@ -73,6 +74,8 @@ function App() {
                 <Route path="/postEdit/:id" element={<EditPost />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/admin/users" element={<UserList />} />
+                <Route path="/admin/users" element={<UserList />} />
+                <Route path="/chatting" element={<Chat />} />
                 {/* <Route path="/login" element={<LoginModal />} /> */}
               </Routes>
             </Col>

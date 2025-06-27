@@ -1,10 +1,10 @@
 {
-  "name": "nodereactproject",
+  "name": "ormserver",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "npx nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,17 +12,14 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "bcrypt": "^6.0.0",
     "cors": "^2.8.5",
-    "crypto": "^1.0.1",
-    "dotenv": "^16.5.0",
+    "dotenv": "^16.6.0",
     "express": "^5.1.0",
-    "jsonwebtoken": "^9.0.2",
     "morgan": "^1.10.0",
     "multer": "^2.0.1",
-    "mysql2": "^3.14.1"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.10"
+    "mysql2": "^3.14.1",
+    "nodemon": "^3.1.10",
+    "sequelize": "^6.37.7",
+    "sequelize-cli": "^6.6.3"
   }
 }

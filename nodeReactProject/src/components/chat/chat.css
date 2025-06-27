@@ -1,0 +1,111 @@
+.wrap {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.wrap h2 {
+  display: flex;
+  align-items: center;
+  color: #2c3e50;
+  margin-bottom: 25px;
+}
+
+.wrap h2 svg {
+  margin-right: 10px;
+  font-size: 24px;
+  color: #3498db;
+}
+
+.wrap input[name="nickname"] {
+  width: 100%;
+  padding: 10px 5px;
+  border: none;
+  border-bottom: 2px solid #ddd;
+  background-color: white;
+  color: black;
+}
+
+.msg {
+  height: 250px;
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 25px;
+  border-radius: 4px;
+  overflow-y: auto;
+  background-color: #f9f9f9;
+}
+
+.input_msg {
+  width: calc(100% - 70px);
+  padding: 10px 5px;
+  border: none;
+  border-bottom: 2px solid #ddd;
+  background-color: white;
+  color: black;
+  border-radius: 0;
+}
+
+.btn-info {
+  padding: 10px 15px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 10px;
+}
+
+.btn-info:hover {
+  background-color: #2980b9;
+}
+
+.mx-1 {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.msg-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+}
+
+.msg-item {
+  padding: 8px 12px;
+  border-radius: 15px;
+  max-width: 85%;
+  word-wrap: break-word;
+}
+
+.msg-item:nth-child(odd) {
+  background-color: #e3f2fd;
+  align-self: flex-start;
+}
+
+.msg-item:nth-child(even) {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  align-self: flex-end;
+}
+
+.msg-item strong {
+  font-weight: 600;
+  color: #2c3e50;
+  margin-right: 5px;
+}
+
+.msg-item span {
+  color: #333;
+}

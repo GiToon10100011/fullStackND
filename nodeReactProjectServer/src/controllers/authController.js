@@ -7,6 +7,7 @@ const generateToken = (user, secret, expiresIn) => {
 };
 
 exports.login = async (req, res) => {
+  console.log(process.env.JWT_ACCESS_SECRET, process.env.JWT_REFRESH_SECRET);
   const { email, password } = req.body;
 
   if (!email || !password) {

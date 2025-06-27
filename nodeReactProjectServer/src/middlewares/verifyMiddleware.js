@@ -13,7 +13,7 @@ exports.accessToken = (req, res, next) => {
     next();
   } catch (err) {
     console.error("Invalid access token:", err.message);
-    return res.status(403).json({ error: "Invalid access token." });
+    return res.status(401).json({ error: "Invalid access token." });
   }
 };
 

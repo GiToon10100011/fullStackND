@@ -17,6 +17,14 @@ const io = new Server(server, {
 
 io.on("connection", (socket) => {
   console.log(`클라이언트 ${socket.id} 접속`);
+  socket.on("sendMessage", (data) => {
+    console.log(`${data.sender}: ${data.message}`);
+    // 모든 클라이언트에게 메시지 전송
+    io.emit("receiveMessage", {
+      message: data.message,
+      sender: data.sender,
+    });
+  });
 });
 
 server.listen(5555, () => {

@@ -1,0 +1,57 @@
+.container {
+    font-family: Arial, sans-serif;
+    max-width:1200px;
+    margin: 1em auto;
+    padding: 2em;
+  }
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+  }
+  
+  .th {
+    padding: 10px;
+    border-bottom: 2px solid #ddd;
+    text-align: left;
+    background-color: #08530b;
+    color: white;
+  }
+  
+  .td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .activeRow {
+    background-color: #e8f5e9;
+  }
+  
+  .expiredRow {
+    background-color: #fbe9e7;
+  }
+  
+  .editBtn {
+    margin-right: 8px;
+    padding: 6px 12px;
+    background-color: #68a7e6;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .deleteBtn {
+    padding: 6px 12px;
+    background-color: #da5b5b;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .emptyRow {
+    text-align: center;
+    padding: 12px;
+  }
+  

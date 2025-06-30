@@ -1,0 +1,33 @@
+.container {
+    padding: 2rem;
+    font-family: Arial, sans-serif;
+  }
+  
+  .title {
+    margin-bottom: 1rem;
+  }
+  
+  .filterGroup {
+    margin-bottom: 20px;
+  }
+  
+  .filterBtn {
+    padding: 6px 14px;
+    margin-right: 8px;
+    border: none;
+    border-radius: 4px;
+    background: #ccc;
+    color: #333;
+    cursor: pointer;
+    transition: background 0.25s;
+  }
+  
+  .filterBtn:hover:not([disabled]) {
+    background: #bbb;
+  }
+  
+  .activeFilter {
+    background: #1976d2;
+    color: #fff;
+  }
+  

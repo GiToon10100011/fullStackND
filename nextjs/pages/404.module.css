@@ -1,0 +1,24 @@
+.container {
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: #777;
+}
+
+.homeButton {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}

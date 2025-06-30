@@ -1,0 +1,61 @@
+.container {
+  margin: 1rem auto;
+  padding: 1rem;
+  background: #fff7f0;
+  border: 2px solid #ffa94d;
+  border-radius: 12px;
+  width:85%;
+}
+
+.slide {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding:0 1rem;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.info {
+  flex: 1;
+}
+
+.timer {
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: #d9480f;
+}
+
+/* 할인율 박스 */
+.discountBox {
+  width: 40%;
+  height: 320px;
+  background-color: #ff4d4f;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.box0{
+    background-color: #ff4d4f;
+}
+.box1{
+     background-color: #4f4dff;
+}
